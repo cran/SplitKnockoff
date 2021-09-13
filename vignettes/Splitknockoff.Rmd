@@ -1,0 +1,881 @@
+---
+title: "Splitknockoff"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Splitknockoff}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SplitKnockoff)
+```
+
+# Vignette for Splitknockoff
+
+**Author : Haoxue Wang, Yang Cao, Xinwei Sun, Yuan Yao**
+
+#### Introduction
+
+Split Knockoff is a novel method for controlling the false discovery rate (FDR) in structural sparsity setting. This proposed scheme relaxes the linear subspace constraint to its neighborhood, often known as variable splitting in optimization. **This vignette illustrates the usage of Splitknockoff with simulation experiments and will help you apply the split knockoff method in a light way.**
+
+```R
+install.packages("SplitKnockoff")   # just one line code to install our package
+```
+
+There is another Matlab package available. Simulation experiment of both packages verify the conclusion of the paper. This R package is more convenient when applied to new dataset as **glmnet** can be used directly by 
+
+```R
+install.packages("glmnet'")  # just one line code to install the glmnet tool
+```
+
+**Please update your glmnet package to the latest version for smooth usage of this package**, this simulation uses *glmnet 4.2*
+
+For more information, please see the manual inside this package.
+
+#### Key function
+
+**splitknockoff.filter(X, D, y, option)**   : Split Knockoff filter for structural sparsity problem.
+
+**splitknockoff.select(W, q)**: this function is for variable selection based on W statistics.
+
+#### function involved frequently
+
+**private.hittingpoint(coef, lambda_vec)**:  calculate the hitting time and the sign of respective variable in a path.
+
+**simu_unit(n, p, D, A, c, k, option)**: the simulation unit for simulation experiments.
+
+**split_knockoffs.create(X, y, D, nu, option)**: create a knockoff copy for A_gamma
+
+**split_knockoffs.statistics.pathorder.W_path(X, D, y, nu, option)**: generate the knockoff statistics W for beta from a split LASSO path in the intercepetion assignment step, using the method of path order.
+
+
+
+#### Simulation Results
+
+Figure 1b of the paper, comparing the different distributions of Knockoff statistics and Split Knockoff statistics.
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcsdcbx6aj60rs0rs0tp02.jpg" alt="figure_1b" style="zoom:50%;" />
+
+Figure 2a of the paper, **FDR** in **$D_1$**
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtd5rf6auuj60rs0rsdgw02.jpg" alt="figure_11" style="zoom:50%;" />
+
+Figure 2b of the paper, **Power** in **$D_1$**
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtd5rm70nnj60rs0rs75g02.jpg" alt="figure_12" style="zoom:50%;" />
+
+Figure 2b of the paper, **FDR** in **$D_2$**
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtd5ru8jkyj60rs0rsab702.jpg" alt="figure_21" style="zoom:50%;" />
+
+Figure 2b of the paper, **Power** in **$D_2$**
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtd5s6tpfrj60rs0rsmyi02.jpg" alt="figure_22" style="zoom:50%;" />
+
+Figure 2b of the paper, **FDR** in **$D_3$**
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtd5sfaxpyj60rs0rs0tr02.jpg" alt="figure_31" style="zoom:50%;" />
+
+Figure 2b of the paper, **Power** in **$D_3$**
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtd5sma46bj60rs0rs0u502.jpg" alt="figure_32" style="zoom:50%;" />
+
+Figure 3a of the paper,  *Effect of Feature Correlation:  FDR for* q = 0.2
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcshfwrffj60rs0rsq4402.jpg" alt="figure_3a" style="zoom:50%;" />
+
+Figure 3b of the paper,  *Effect of Feature Correlation: Power for* q = 0.2
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcshwgh4sj60rs0rsgn202.jpg" alt="figure_3b" style="zoom:50%;" />
+
+Figure 4a of the paper,  *Effect of SNR:  FDR for* q = 0.2
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcskl7xfrj60rs0rsmy602.jpg" alt="figure_4a" style="zoom:50%;" />
+
+Figure 4b of the paper,  *Effect of SNR: Power for* q = 0.2
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcsmudg78j60rs0rsdgy02.jpg" alt="figure_4b" style="zoom:50%;" />
+
+Figure 5a of the paper, *Effect of Sparsity Level: FDR for* q = 0.2
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcso1dmm2j60rs0rs3zm02.jpg" alt="figure_5a" style="zoom:50%;" />
+
+Figure 5b of the paper, *Effect of Sparsity Level: Power and FDR for* q = 0.2
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcspcan83j60rs0rsabf02.jpg" alt="figure_5b" style="zoom:50%;" />
+
+
+
+
+
+
+
+### **For a complete reproduction of the simulation, you can see the code as fellow.**
+
+#### simulation details
+
+##### Install all the packages and library them.
+
+```R
+install.packages("SplitKnockoff")   # install our package
+
+
+library(latex2exp)
+library(ggplot2)
+library(Matrix)
+library(glmnet)
+library(MASS)
+library(SplitKnockoff)
+```
+
+##### set the parameter for the simulation
+
+```R
+k <- 20   # sparsity level
+A <- 1    # magnitude
+n <- 350  # sample size
+p <- 100  # dimension of variables
+c <- 0.5  # feature correlation
+sigma <-1 # noise level
+
+option <- array(data = NA, dim = length(data), dimnames = NULL)
+option$q <- 0.2
+option$eta <- 0.1
+option$method <- 'knockoff'
+option$stage0 <- 'path'
+option$normalize <- 'true'
+option$cv_rule <- 'min'
+option$lambda <- 10.^seq(0, -6, by=-0.01)
+option$nu <- 10
+option$copy <- 'true'
+option <- option[-1]
+```
+
+##### generate D and X
+
+```R
+D <- diag(p)
+m <- nrow(D)
+
+# generate X
+Sigma = matrix(0, p, p)
+for( i in 1: p){
+  for(j in 1: p){
+    Sigma[i, j] <- c^(abs(i - j))
+  }
+}
+```
+
+##### package **mvtnorm** needed for this generation, please install it in advance 
+
+```R
+
+library(mvtnorm) # package mvtnorm needed for this generation
+set.seed(100)
+X <- rmvnorm(n,matrix(0, p, 1), Sigma) # generate X
+```
+
+##### generate beta and gamma
+
+```R
+beta_true <- matrix(0, p, 1)
+for( i in 1: k){
+  beta_true[i, 1] = A
+  if ( i%%3 == 1){
+  beta_true[i, 1] = -A
+  }
+}
+gamma_true <- D %*% beta_true
+
+S0 <- which(gamma_true!=0)
+```
+
+generate varepsilon and noise and y
+
+```R
+# generate varepsilon
+set.seed(1)
+
+# generate noise and y
+varepsilon <- rnorm(n) * sqrt(sigma)
+y <- X %*% beta_true + varepsilon
+```
+
+#### **key step**
+
+**use the key function filter to get the Z_path and t_Z_path** 
+
+```R
+## Split Knockoff
+filter_result <- splitknockoff.filter(X, D, y, option)
+Z_path <- filter_result$Z
+t_Z_path <- filter_result$t_Z
+```
+
+**plot the figure** 
+
+```R
+a <- sub("TRUE","0",is.element(1:m, S0))
+b <- sub("FALSE","1",a)
+df <- data.frame(x=Z_path[[1]],y= t_Z_path[[1]], feature=b)
+save.image("C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/figure_1/result/figure_1.RData")
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/figure_1/plot/figure_1b.png', height=1000, width=1000)
+p <- ggplot(data=df,aes(x=x, y=y, color=feature))+geom_point(size=2)
+p <-p + labs(title = "Split Knockoff with Lasso Statistic")
+p <-p + labs(x = TeX("Value of $Z_i$"))
+p <-p + labs(y = TeX("Value of $\\tilde{Z_i}$"))
+p <-p + scale_fill_discrete(breaks=c("Null feature","Non-null feature"))
+p <-p + geom_abline(intercept=0,slope=1 )
+p <-p + scale_colour_discrete(labels=c("Null feature", "Non-null feature"))
+p <-p + scale_y_continuous(limits = c(0, Z_path[[1]]))
+print(p)
+dev.off()
+```
+
+here we see the result 
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtcsfybbg2j60rs0rs0tp02.jpg" alt="figure_1b" style="zoom:50%;" />
+
+### for Figure 2a, 2b, 2d, 2e, 2g and 2h of the paper simulation
+
+```R
+# 1 June, 2021
+# revised 7 July, 2021
+# author：Haoxue Wang (haoxwang@student.ethz.ch)
+
+# This script reproduces the figures of FDR and power in Section 5.2, 5.3, 5.4
+# of the paper, comparing the performance of Split Knockoffs and Knockoffs.
+#
+# The intermediate result will be automatically saved to
+# '../result/temp.RData’ with the proceeding of the calculation. The final
+# result will be saved to '../result/examples.mat'. The whole calculation
+# may takes hours to finish.
+
+install.packages("SplitKnockoff")   # install our package
+
+
+library(latex2exp)
+library(ggplot2)
+library(Matrix)
+library(glmnet)
+library(MASS)
+library(SplitKnockoff)
+
+k <- 20   # sparsity level
+A <- 1    # magnitude
+n <- 350  # sample size
+p <- 100  # dimension of variables
+c <- 0.5  # feature correlation
+
+option <- array(data=NA, dim = length(data), dimnames = NULL)
+option$q <- 0.2
+option$eta <- 0.1
+option$stage0 <- 'path'
+option$normalize <- 'true'
+option$lambda <- 10.^seq(0, -6, by=-0.01)
+option$copy <- 'true'
+option <- option[-1]
+
+# settings for nu
+expo <- seq(-1, 3, by=0.2)
+option$nu <- 10.^expo
+num_nu <- length(option$nu)
+## calculation
+
+# generate D1, D2, and D3
+D_G = matrix(0,p-1, p)
+
+for (i in 1:p-1){
+D_G[i, i] <- 1
+D_G[i, i+1] <- -1
+}
+
+D_1 <-diag(p)
+D_2 <- D_G
+D_3 <- rbind(diag(p), D_G)
+D_s <- array(data = NA, dim = length(data), dimnames = NULL)
+D_s$D_1 <- D_1
+D_s$D_2 <- D_2
+D_s$D_3 <- D_3
+D_s <- D_s[-1]
+
+
+
+fdr_split <- array(0,c(3, num_nu, 2))
+power_split <- array(0,c(3, num_nu,2))
+
+# fdr_knock <- matrix(0, 2, 2)
+# power_knock <- matrix(0, 2, 2)
+
+num_method <- 2
+method_s <- c('knockoff', 'knockoff+')
+
+
+# attention! for quick speed, please set the meth manually 1 and 2
+# when meth =2, set the ratio calculation offset=1 in function select
+  meth = 1
+  for (i in 1: 3){
+# choose the respective D for each example
+  sprintf('Running example for D_%d', i)
+  D <- D_s[[i]]
+  simu_data <- simu_unit(n, p, D, A, c, k, option)
+  fdr_split[i, , meth ] <- simu_data$fdr_split
+  power_split[i, , meth] <- simu_data$power_split
+  # if (i < 3){
+  # fdr_knock[meth, i] <- simu_data$fdr_knock
+  # power_knock[meth, i] <- simu_data$power_knock
+  #   }
+  }
+  save.image(file = "C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/result/temp.RData")
+
+
+# save results
+save.image("C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/result/examples.RData")
+fdr_split_result <- fdr_split
+power_split_result <- power_split
+
+## for D_1
+## plot for FDR
+x <- expo
+fdr_split <- fdr_split_result[1, ,1]
+fdr_split <- array(fdr_split, dim=c(num_nu, 1))
+fdr_split_plus <- fdr_split_result[1,,2]
+fdr_split_plus <- array(fdr_split_plus, dim=c(num_nu, 1))
+
+
+fdr <- data.frame(x,fdr_split,fdr_split_plus)
+fdr[is.na(fdr)] <- 0
+
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_11.png', height=1000, width=1000)
+p <- ggplot()+geom_line(data=fdr,aes(x=x, y=fdr_split, color='fdr_split'))
+p <- p +geom_line(data=fdr,aes(x=x, y=fdr_split_plus, color='fdr_split_plus'))
+p <-p + labs(x = TeX("$\\log_{10} (\\nu)$"))
+p <-p + labs(y = TeX("FDR"))
+p <-p + geom_abline(intercept=0.2,slope=0,linetype="dashed" )
+p <-p + scale_fill_discrete(breaks=c("split Knockoff", "split Knockoff+"))
+p <-p + scale_colour_discrete(labels=c("split Knockoff", "split Knockoff+"))
+p <-p + scale_y_continuous(limits = c(0,1))
+print(p)
+dev.off()
+
+
+
+
+## plot for Power
+x <- expo
+power_split <- power_split_result[1,,1]
+power_split <- array(power_split, dim=c(num_nu, 1))
+power_split_plus <- power_split_result[1,,2]
+power_split_plus <- array(power_split_plus, dim=c(num_nu, 1))
+
+
+power <- data.frame(x, power_split,power_split_plus)
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_12.png', height=1000, width=1000)
+q <- ggplot()+geom_line(data=power,aes(x=x, y=power_split, color='split Knockoff'))
+q <- q + geom_line(data=power,aes(x=x, y=power_split_plus, color='split Knockoff+'))
+q <-q + labs(x = TeX("$\\log_{10} (\\nu)$"))
+q <-q + labs(y = TeX("Power"))
+q <-q + scale_fill_discrete(breaks=c("split Knockoff", "split Knockoff+"))
+q <-q + scale_colour_discrete(labels=c("split Knockoff", "split Knockoff+"))
+q <-q+ scale_y_continuous(limits = c(0,1))
+print(q)
+dev.off()
+
+
+## for D_2
+## plot for FDR
+x <- expo
+fdr_split <- fdr_split_result[2,,1]
+fdr_split <- array(fdr_split, dim=c(num_nu, 1))
+fdr_split_plus <- fdr_split_result[2, ,2]
+fdr_split_plus <- array(fdr_split_plus, dim=c(num_nu, 1))
+
+
+fdr <- data.frame(x,fdr_split,fdr_split_plus)
+fdr[is.na(fdr)] <- 0
+# save results
+
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_21.png', height=1000, width=1000)
+p <- ggplot()+geom_line(data=fdr,aes(x=x, y=fdr_split, color='fdr_split'))
+p <- p +geom_line(data=fdr,aes(x=x, y=fdr_split_plus, color='fdr_split_plus'))
+p <-p + labs(x = TeX("$\\log_{10} (\\nu)$"))
+p <-p + labs(y = TeX("FDR"))
+p <-p + geom_abline(intercept=0.2,slope=0,linetype="dashed" )
+p <-p + scale_fill_discrete(breaks=c("split Knockoff", "split Knockoff+"))
+p <-p + scale_colour_discrete(labels=c("split Knockoff", "split Knockoff+"))
+p <-p + scale_y_continuous(limits = c(0,1))
+print(p)
+dev.off()
+
+
+
+## plot for Power
+x <- expo
+power_split <- power_split_result[2,,1 ]
+power_split <- array(power_split, dim=c(num_nu, 1))
+power_split_plus <- power_split_result[2,,2]
+power_split_plus <- array(power_split_plus, dim=c(num_nu, 1))
+# power_knock_ <- power_knock[1]
+# power_knock_plus_ <- power_knock[2]
+# power_knock_ <- rep(power_knock_, num_nu)
+# power_knock_plus_ <- rep(power_knock_plus_, num_nu)
+
+power <- data.frame(x,power_split,power_split_plus)
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_22.png', height=1000, width=1000)
+q <- ggplot()+geom_line(data=power,aes(x=x, y=power_split, color='power_split'))
+q <- q + geom_line(data=power,aes(x=x, y=power_split_plus, color='power_split_plus'))
+q <-q + labs(x = TeX("$\\log_{10} (\\nu)$"))
+q <-q + labs(y = TeX("Power"))
+q <-q + scale_fill_discrete(breaks=c("split Knockoff", "split Knockoff+"))
+q <-q+ scale_colour_discrete(labels=c("split Knockoff", "split Knockoff+"))
+q <-q+ scale_y_continuous(limits = c(0,1))
+print(q)
+dev.off()
+
+
+
+## for D_3
+## plot for FDR
+x <- expo
+fdr_split <- fdr_split_result[3,,1 ]
+fdr_split <- array(fdr_split, dim=c(num_nu, 1))
+fdr_split_plus <- fdr_split_result[3,,2]
+fdr_split_plus <- array(fdr_split_plus, dim=c(num_nu, 1))
+
+
+fdr <- data.frame(x,fdr_split,fdr_split_plus)
+fdr[is.na(fdr)] <- 0
+# save results
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_31.png', height=1000, width=1000)
+p <- ggplot()+geom_line(data=fdr,aes(x=x, y=fdr_split, color='fdr_split'))
+p <- p +geom_line(data=fdr,aes(x=x, y=fdr_split_plus, color='fdr_split_plus'))
+p <-p + labs(x = TeX("$\\log_{10} (\\nu)$"))
+p <-p + labs(y = TeX("FDR"))
+p <-p + geom_abline(intercept=0.2,slope=0,linetype="dashed" )
+p <-p + scale_fill_discrete(breaks=c("split Knockoff", "split Knockoff+"))
+p <-p + scale_colour_discrete(labels=c("split Knockoff", "split Knockoff+"))
+p <-p + scale_y_continuous(limits = c(0,1))
+print(p)
+dev.off()
+
+
+
+## plot for Power
+x <- expo
+power_split <- power_split_result[3,,1 ]
+power_split <- array(power_split, dim=c(num_nu, 1))
+power_split_plus <- power_split_result[3,,2]
+power_split_plus <- array(power_split_plus, dim=c(num_nu, 1))
+
+power <- data.frame(x,power_split,power_split_plus)
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_32.png', height=1000, width=1000)
+q <- ggplot()+geom_line(data=power,aes(x=x, y=power_split, color='power_split'))
+q <- q + geom_line(data=power,aes(x=x, y=power_split_plus, color='power_split_plus'))
+q <-q + labs(x = TeX("$\\log_{10} (\\nu)$"))
+q <-q + labs(y = TeX("Power"))
+q <-q + scale_fill_discrete(breaks=c("split Knockoff", "split Knockoff+"))
+q <-q+ scale_colour_discrete(labels=c("split Knockoff ", "split Knockoff+"))
+q <-q+ scale_y_continuous(limits = c(0,1))
+print(q)
+dev.off()
+
+save.image(file = "C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/result/final.RData")
+```
+
+
+
+### for Figure 3a and 3b of the paper simulation
+
+```R
+# simulation experinment
+# 1 June, 2021
+# revised 7 July, 2021
+# author：Haoxue Wang (haoxwang@student.ethz.ch)
+
+# This script reproduces Figure 3 of the paper, comparing the performance
+# of Knockoff and Split Knockoff in extreme settings of feature
+# correlation.
+# The final workspace is saved to '../result/correlation.RData'.
+
+install.packages("SplitKnockoff")   # install our package
+
+
+library(latex2exp)
+library(ggplot2)
+library(Matrix)
+library(glmnet)
+library(MASS)
+library(SplitKnockoff)
+
+
+## choose parameters
+
+k <- 20  # sparsity level
+A <- 1   # magnitude
+n <- 350 # sample size
+p <- 100 # dimention of variables
+c_s <- c(0, 0.9) # feature correlation
+
+option <- array(data = NA, dim = length(data), dimnames = NULL)
+option$q <- 0.2
+option$eta <- 0.1
+option$method <- 'knockoff'
+option$stage0 <- 'path'
+option$normalize = 'true'
+option$lambda <- 10.^seq(0, -6, by=-0.01)
+option$copy = 'true'
+
+## settings for nu
+expo = seq(-1, 3, by=0.2)
+option$nu = 10.^expo
+num_nu = length(option$nu)
+
+## calculation
+
+# generate D
+D_G <- matrix(0,p-1, p)
+
+for(i in 1:p-1){
+  D_G[i, i] <- 1
+  D_G[i, i+1] <- -1
+}
+
+D <- D_G
+
+fdr_glmnet <- matrix(0, 2, num_nu)
+power_glmnet <- matrix(0, 2, num_nu)
+
+# fdr_knock <- matrix(0, 2, 1)
+# power_knock <- matrix(0, 2, 1)
+
+for(i in 1: 2){
+  c <- c_s[i]
+  simu_data <- simu_unit(n, p, D, A, c, k,option)
+  fdr_glmnet[i, ] <- simu_data$fdr_split
+  power_glmnet[i, ] <- simu_data$power_split
+  # fdr_knock[i,] <- simu_data$fdr_knock
+  # power_knock[i,] <- simu_data$power_knock
+}
+
+
+## plot for FDR
+x <- expo
+fdr_split <- fdr_glmnet[1, ]
+fdr_split <- array(fdr_split, dim=c(num_nu, 1))
+fdr_split_plus <- fdr_glmnet[2, ]
+fdr_split_plus <- array(fdr_split_plus, dim=c(num_nu, 1))
+# fdr_knock_ <- fdr_knock[1]
+# fdr_knock_plus_ <- fdr_knock[2]
+# fdr_knock_ <- rep(fdr_knock_, num_nu)
+# fdr_knock_plus_ <- rep(fdr_knock_plus_, num_nu)
+
+fdr <- data.frame(x,fdr_split,fdr_split_plus)
+fdr[is.na(fdr)] <- 0
+# save results
+save.image("C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/result/correlation.RData")
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/plot/figure_3a.png', height=1000, width=1000)
+p <- ggplot()+geom_line(data=fdr,aes(x=x, y=fdr_split, color='fdr_split'))
+p <- p +geom_line(data=fdr,aes(x=x, y=fdr_split_plus, color='fdr_split_plus'))
+p <-p + labs(x = TeX("$\\log_{10} (\\nu)$"))
+p <-p + labs(y = TeX("FDR"))
+p <-p + geom_abline(intercept=0.2,slope=0,linetype="dashed" )
+p <-p + scale_fill_discrete(breaks=c("split Knockoff (c = 0)", "split Knockoff (c = 0.9)"))
+p <-p + scale_colour_discrete(labels=c("split Knockoff (c = 0)", "split Knockoff (c = 0.9)"))
+p <-p + scale_y_continuous(limits = c(0,1))
+print(p)
+dev.off()
+
+
+
+
+## plot for Power
+x <- expo
+power_split <- power_glmnet[1, ]
+power_split <- array(power_split, dim=c(num_nu, 1))
+power_split_plus <- power_glmnet[2, ]
+power_split_plus <- array(power_split_plus, dim=c(num_nu, 1))
+# power_knock_ <- power_knock[1]
+# power_knock_plus_ <- power_knock[2]
+# power_knock_ <- rep(power_knock_, num_nu)
+# power_knock_plus_ <- rep(power_knock_plus_, num_nu)
+
+power <- data.frame(x,power_split,power_split_plus)
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/plot/figure_3b.png', height=1000, width=1000)
+q <- ggplot()+geom_line(data=power,aes(x=x, y=power_split, color='power_split'))
+q <- q + geom_line(data=power,aes(x=x, y=power_split_plus, color='power_split_plus'))
+q <-q + labs(x = TeX("$\\log_{10} (\\nu)$"))
+q <-q + labs(y = TeX("Power"))
+q <-q + scale_fill_discrete(breaks=c("split Knockoff (c = 0)", "split Knockoff (c = 0.9)"))
+q <-q+ scale_colour_discrete(labels=c("split Knockoff (c = 0)", "split Knockoff (c = 0.9)"))
+q <-q+ scale_y_continuous(limits = c(0,1))
+print(q)
+dev.off()
+
+```
+
+### for Figure 4a and 4b of the paper simulation
+
+```R
+install.packages("SplitKnockoff")   # install our package
+
+
+library(latex2exp)
+library(ggplot2)
+library(Matrix)
+library(glmnet)
+library(MASS)
+library(SplitKnockoff)
+
+
+## choose parameters
+
+k <- 20 # sparsity level
+A_s <- c(0.25, 4) #magnitude
+n <- 350  # sample size
+p <- 100  # dimention of variables
+c <- 0.5  # feature correlation
+
+option <- array(data = NA, dim = length(data), dimnames = NULL)
+option$q <- 0.2
+option$eta <- 0.1
+option$method <- 'knockoff'
+option$stage0 <- 'path'
+option$normalize <- 'true'
+option$lambda <- 10.^seq(0, -6, by=-0.01)
+option$copy = 'true'
+
+# settings for nu
+expo <- seq(-1, 3, by=0.2)
+option$nu <- 10.^expo
+num_nu <- length(option$nu)
+
+# generate D
+D_G <- matrix(0,p-1, p)
+
+for(i in 1:p-1){
+  D_G[i, i] <- 1
+  D_G[i, i+1] <- -1
+}
+
+D <- D_G
+
+fdr_glmnet <- matrix(0, 2, num_nu)
+power_glmnet <- matrix(0, 2, num_nu)
+
+# fdr_knock <- matrix(0, 2, 1)
+# power_knock <- matrix(0, 2, 1)
+
+for(i in 1: 2){
+  A <- A_s[i]
+  simu_data <- simu_unit(n, p, D, A, c, k, option)
+  fdr_glmnet[i, ] <- simu_data$fdr_split
+  power_glmnet[i, ] <- simu_data$power_split
+  # fdr_knock[i] <- simu_data$fdr_knock
+  # power_knock[i] <- simu_data$power_knock
+}
+
+
+
+## plot for FDR
+x <- expo
+fdr_split <- fdr_glmnet[1, ]
+fdr_split <- array(fdr_split, dim=c(num_nu, 1))
+fdr_split_plus <- fdr_glmnet[2, ]
+fdr_split_plus <- array(fdr_split_plus, dim=c(num_nu, 1))
+# fdr_knock_ <- fdr_knock[1]
+# fdr_knock_plus_ <- fdr_knock[2]
+# fdr_knock_ <- rep(fdr_knock_, num_nu)
+# fdr_knock_plus_ <- rep(fdr_knock_plus_, num_nu)
+
+fdr <- data.frame(x,fdr_split,fdr_split_plus)
+fdr[is.na(fdr)] <- 0
+# save results
+save.image("C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/result/snr.RData")
+
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/plot/figure_4a.png', height=1000, width=1000)
+p <- ggplot()+geom_line(data=fdr,aes(x=x, y=fdr_split, color='fdr_split'))
+p <- p +geom_line(data=fdr,aes(x=x, y=fdr_split_plus, color='fdr_split_plus'))
+p <-p + labs(x = TeX("$\\log_{10} (\\nu)$"))
+p <-p + labs(y = TeX("FDR"))
+p <-p + geom_abline(intercept=0.2,slope=0,linetype="dashed" )
+p <-p + scale_fill_discrete(breaks=c("split Knockoff (SNR = 0.25)", "split Knockoff (SNR = 4)"))
+p <-p + scale_colour_discrete(labels=c("split Knockoff (SNR = 0.25)", "split Knockoff (SNR = 4)"))
+p <-p + geom_abline(intercept=0.2,slope=0,linetype="dashed" )
+p <-p + scale_y_continuous(limits = c(0,1))
+print(p)
+dev.off()
+
+
+
+## plot for Power
+x <- expo
+power_split <- power_glmnet[1, ]
+power_split <- array(power_split, dim=c(num_nu, 1))
+power_split_plus <- power_glmnet[2, ]
+power_split_plus <- array(power_split_plus, dim=c(num_nu, 1))
+# power_knock_ <- power_knock[1]
+# power_knock_plus_ <- power_knock[2]
+# power_knock_ <- rep(power_knock_, num_nu)
+# power_knock_plus_ <- rep(power_knock_plus_, num_nu)
+
+power <- data.frame(power_split,power_split_plus)
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/plot/figure_4b.png', height=1000, width=1000)
+q <- ggplot()+geom_line(data=power,aes(x=x, y=power_split, color='power_split'))
+q <- q + geom_line(data=power,aes(x=x, y=power_split_plus, color='power_split_plus'))
+q <-q + labs(x = TeX("$\\log_{10} (\\nu)$"))
+q <-q + labs(y = TeX("Power"))
+q <-q + scale_fill_discrete(breaks=c("split Knockoff (SNR = 0.25)", "split Knockoff (SNR = 4)"))
+q <-q+ scale_colour_discrete(labels=c("split Knockoff (SNR = 0.25)", "split Knockoff (SNR = 4)"))
+q <-q+ scale_y_continuous(limits = c(0,1))
+print(q)
+dev.off()
+
+
+```
+
+### for Figure 5a and 5b of the paper simulation
+
+```R
+install.packages("SplitKnockoff")   # install our package
+
+
+library(latex2exp)
+library(ggplot2)
+library(Matrix)
+library(glmnet)
+library(MASS)
+library(SplitKnockoff)
+
+
+## choose parameters
+
+k_s <- c(10, 100)  # sparsity level
+A <- 1   # magnitude
+n <- 350 # sample size
+p <- 100 # dimention of variables
+c <- 0.5 # feature correlation
+
+option <- array(data = NA, dim = length(data), dimnames = NULL)
+option$q <- 0.2
+option$eta <- 0.1
+option$method <- 'knockoff'
+option$stage0 <- 'path'
+option$normalize <- 'true'
+option$lambda <- 10.^seq(0, -6, by=-0.01)
+option$copy = 'true'
+
+# settings for nu
+expo <- seq(-1, 3, by=0.2)
+option$nu <- 10.^expo
+num_nu <- length(option$nu)
+
+
+## calculation
+
+# generate D
+D_G <- matrix(0,p-1, p)
+
+for(i in 1:p-1){
+  D_G[i, i] <- 1
+  D_G[i, i+1] <- -1
+}
+
+D <- D_G
+
+fdr_glmnet <- matrix(0, 2, num_nu)
+power_glmnet <- matrix(0, 2, num_nu)
+
+# fdr_knock <- matrix(0, 2, 1)
+# power_knock <- matrix(0, 2, 1)
+
+for(i in 1: 2){
+  k <- k_s[i]
+  simu_data <- simu_unit(n, p, D, A, c, k, option)
+  fdr_glmnet[i, ] <- simu_data$fdr_split
+  power_glmnet[i, ] <- simu_data$power_split
+  # fdr_knock[i] <- simu_data$fdr_knock
+  # power_knock[i] <- simu_data$power_knock
+}
+
+
+
+
+## plot for FDR
+x <- expo
+fdr_split <- fdr_glmnet[1, ]
+fdr_split <- array(fdr_split, dim=c(num_nu, 1))
+fdr_split_plus <- fdr_glmnet[2, ]
+fdr_split_plus <- array(fdr_split_plus, dim=c(num_nu, 1))
+# fdr_knock_ <- fdr_knock[1]
+# fdr_knock_plus_ <- fdr_knock[2]
+# fdr_knock_ <- rep(fdr_knock_, num_nu)
+# fdr_knock_plus_ <- rep(fdr_knock_plus_, num_nu)
+
+fdr <- data.frame(x,fdr_split,fdr_split_plus)
+fdr[is.na(fdr)] <- 0
+# save results
+save.image("C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/result/sparsity.RData")
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/plot/figure_5a.png', height=1000, width=1000)
+p <- ggplot()+geom_line(data=fdr,aes(x=x, y=fdr_split, color='fdr_split'))
+p <- p +geom_line(data=fdr,aes(x=x, y=fdr_split_plus, color='fdr_split_plus'))
+p <-p + labs(x = TeX("$\\log_{10} (\\nu)$"))
+p <-p + labs(y = TeX("FDR"))
+p <-p + geom_abline(intercept=0.2,slope=0,linetype="dashed" )
+p <-p + scale_fill_discrete(breaks=c("split Knockoff (k = 10)", "split Knockoff (k = 100)"))
+p <-p + scale_colour_discrete(labels=c("split Knockoff (k = 10)", "split Knockoff (k = 100)"))
+p <-p + scale_y_continuous(limits = c(0,1))
+print(p)
+dev.off()
+
+
+
+## plot for Power
+x <- expo
+power_split <- power_glmnet[1, ]
+power_split <- array(power_split, dim=c(num_nu, 1))
+power_split_plus <- power_glmnet[2, ]
+power_split_plus <- array(power_split_plus, dim=c(num_nu, 1))
+# power_knock_ <- power_knock[1]
+# power_knock_plus_ <- power_knock[2]
+# power_knock_ <- rep(power_knock_, num_nu)
+# power_knock_plus_ <- rep(power_knock_plus_, num_nu)
+
+power <- data.frame(power_split,power_split_plus)
+png(file='C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/param_ablation/plot/figure_5b.png', height=1000, width=1000)
+q <- ggplot()+geom_line(data=power,aes(x=x, y=power_split, color='power_split'))
+q <- q + geom_line(data=power,aes(x=x, y=power_split_plus, color='power_split_plus'))
+q <-q + labs(x = TeX("$\\log_{10} (\\nu)$"))
+q <-q + labs(y = TeX("Power"))
+q <-q + scale_fill_discrete(breaks=c("split Knockoff (k = 10)", "split Knockoff (k = 100)"))
+q <-q+ scale_colour_discrete(labels=c("split Knockoff (k = 10)", "split Knockoff (k = 100)"))
+q <-q+ scale_y_continuous(limits = c(0,1))
+q <-q+ scale_y_continuous(limits = c(0,1))
+print(q)
+dev.off()
+
+
+```
+
+### For your consideration
+
+It usually takes 50min-80min to simulate each experiment. If you want to see the result of the experiment directly, you can reload our generated result by 
+
+```R
+load("...../SplitKnockoff/simu_experiments/figure_1/result/figure_1.RData")
+load("...../SplitKnockoff/simu_experiments/param_ablation/result/correlation.RData")
+load("...../SplitKnockoff/simu_experiments/param_ablation/result/snr.RData")
+load("...../SplitKnockoff/simu_experiments/param_ablation/result/sparsity.RData")
+load("...../SplitKnockoff/simu_experiments/examples/result/final.RData")
+```
+
+
+
+If you have any question or idea, please contact the author of this R package **Haoxue Wang (haoxwang@student.ethz.ch)**.
