@@ -24,7 +24,7 @@ library(SplitKnockoff)
 
 #### Introduction
 
-Split Knockoff is a novel method for controlling the false discovery rate (FDR) in structural sparsity setting. This proposed scheme relaxes the linear subspace constraint to its neighborhood, often known as variable splitting in optimization. **This vignette illustrates the usage of Splitknockoff with simulation experiments and will help you apply the split knockoff method in a light way.**
+Split Knockoff is a novel method for controlling the false discovery rate (FDR) in structural sparsity setting. This proposed scheme relaxes the linear subspace constraint to its neighborhood, often known as variable splitting in optimization. **This vignette illustrates the usage of Splitknockoff with simulation experiments and will help you apply the split knockoff method in a light way.** On top of that, **an application to Alzheimer’s Disease** study with MRI data demonstrates that the split knockoff method can disclose important lesion regions in brains associated with the disease and connections between neighboring regions of high contrast variations during disease progression.
 
 ```R
 install.packages("SplitKnockoff")   # just one line code to install our package
@@ -863,6 +863,110 @@ dev.off()
 
 
 ```
+
+
+
+### Alzheimer’s Disease application
+
+#### Disclose important lesion regions in brains associated with the disease
+
+```R
+library(latex2exp)
+library(ggplot2)
+library(Matrix)
+library(glmnet)
+library(MASS)
+library(SplitKnockoff)
+
+option <- array(data=NA, dim = length(data), dimnames = NULL)
+option$q <- 0.2
+option$eta <- 0.1
+option$stage0 <- 'path'
+option$normalize <- 'true'
+option$lambda <- 10.^seq(0, -6, by=-0.01)
+option$copy <- 'true'
+option <- option[-1]
+
+# settings for nu
+expo <- seq(-1, 1, by=0.1)
+option$nu <- 10.^expo
+num_nu <- length(option$nu)
+
+root = getwd()
+setwd(sprintf('%s/data/', root))
+X = read.csv('X.csv')
+X =as.matrix(X)
+y = read.csv('y.csv')
+y = as.matrix(y)
+D = read.csv('D.csv')
+D = as.matrix(D)
+D = diag(90)
+
+filter_result <- splitknockoff.filter(X, D, y, option)
+results <- filter_result$results
+save(results, file="results/region.RData")
+```
+
+**results of the regions**
+
+each number specifies a region
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gw0xxlqbcmj315h0u0q7z.jpg" alt="image-20211102103712294" style="zoom:30%;" />
+
+#### Connections between neighboring regions of high contrast variations during disease progression.
+
+```R
+library(latex2exp)
+library(ggplot2)
+library(Matrix)
+library(glmnet)
+library(MASS)
+library(SplitKnockoff)
+
+option <- array(data=NA, dim = length(data), dimnames = NULL)
+option$q <- 0.2
+option$eta <- 0.1
+option$stage0 <- 'path'
+option$normalize <- 'true'
+option$lambda <- 10.^seq(0, -6, by=-0.01)
+option$copy <- 'true'
+option <- option[-1]
+
+# settings for nu
+expo <- seq(-1, 1, by=0.1)
+option$nu <- 10.^expo
+num_nu <- length(option$nu)
+
+
+# original .mat data 
+root = getwd()
+setwd(sprintf('%s/data/', root))
+X = readMat('X.mat')
+X = X$X
+y = readMat('y.mat')
+y = y$y
+D = readMat('D.mat')
+D = D$D
+#
+# root = getwd()
+# setwd(sprintf('%s/data/', root))
+# X = read.csv('X.csv')
+# X =as.matrix(X)
+# y = read.csv('y.csv')
+# y = as.matrix(y)
+# D = read.csv('D.csv')
+# D = as.matrix(D)
+
+filter_result <- splitknockoff.filter(X, D, y, option)
+results <- filter_result$results
+save(results, file="results/connection.RData")
+```
+
+**results of connection**
+
+each number specifies a connection
+
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gw0xzlfvzcj30ym090mxr.jpg" alt="image-20211102103913042" style="zoom:33%;" />
 
 ### For your consideration
 

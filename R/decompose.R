@@ -15,6 +15,7 @@
 #' @return V = V
 #' @return U_perp =U_perp
 #' @examples
+#' library(mvtnorm)
 #' n = 350
 #' p = 100
 #' Sigma = matrix(0, p, p)

@@ -1,8 +1,8 @@
 Package: SplitKnockoff
 Type: Package
 Title: Split Knockoffs for Structural Sparsity
-Version: 0.8
-Date: 2021-09-01
+Version: 1.0
+Date: 2021-11-01
 Author: Haoxue Wang [aut, cre] (Development of the whole packages),
   Yang Cao [aut] (Revison of this package),
   Xinwei Sun [aut] (Original ideas about the package),
@@ -21,7 +21,9 @@ Maintainer: Haoxue Wang <haoxwang@student.ethz.ch>
 Description: A novel method for controlling the false discovery rate (FDR)
              in structural sparsity setting. This proposed scheme relaxes the linear subspace
              constraint to its neighborhood, often known as variable splitting in optimization.
-             Simulation experiments can be reproduced following the Vignette.
+             Simulation experiments can be reproduced following the Vignette. We include data
+             (both .mat and .csv format) and application with our method of Alzheimer’s Disease 
+             study in this package.
              'Split Knockoffs' is defined in Cao et al. (2021) <arXiv:2103.16159>. 
 URL: https://github.com/wanghaoxue0/SplitKnockoff
 BugReports: https://github.com/wanghaoxue0/SplitKnockoff/issues
@@ -34,6 +36,6 @@ VignetteBuilder: knitr
 NeedsCompilation: no
 RoxygenNote: 7.1.1
 License: MIT + file LICENSE
-Packaged: 2021-09-12 11:26:31 UTC; wang
+Packaged: 2021-11-02 16:21:59 UTC; wang
 Repository: CRAN
-Date/Publication: 2021-09-13 12:40:02 UTC
+Date/Publication: 2021-11-02 22:20:15 UTC

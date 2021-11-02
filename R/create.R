@@ -125,8 +125,8 @@ split_knockoffs.create <- function(X, y, D, nu, option)
 
 
     # calculate K^T K = 2S-S C_nu^{-1} S
-    KK = 2 * diag_s - diag_s * C_inv * diag_s
-    KK = (KK +KK)/2
+    KK = 2 * diag_s - diag_s %*% C_inv %*% diag_s
+    KK = (KK + t(KK))/2
     See <- diag(eigen(KK)$val)
     Uee <- eigen(KK)$vec
     K = Uee %*% sqrt(See) %*% t(Uee)
