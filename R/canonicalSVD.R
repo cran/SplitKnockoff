@@ -8,7 +8,7 @@
 # the sign of each vector in U is chosen such that the coefficient
 # with largest absolute value is positive.
 
-#' canonicalSVD
+#' singular value decomposition
 #'
 #' Computes a reduced SVD without sign ambiguity
 #'

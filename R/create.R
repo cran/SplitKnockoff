@@ -3,23 +3,20 @@
 # revised 7 July, 2021
 # author：Haoxue Wang (haoxwang@student.ethz.ch)
 
-# split_knockoffs.create gives the variable splitting design matrix
-# [A_beta, A_gamma] and response vector tilde_y. It will also create a
-# knockoff copy for A_gamma if required.
 
-#' split_knockoffs.create
+#' generate split knockoff copies
 #'
-#' gives the variable splitting design matrix
-#' [A_beta, A_gamma] and response vector tilde_y. It will also create a
-#' knockoff copy for A_gamma if required.
+#' Give the variable splitting design matrix
+#' and response vector. It will also create a split
+#' knockoff copy if required.
 #'
 #' @param X the design matrix
 #' @param y the response vector
 #' @param D the linear transform
 #' @param nu the parameter for variable splitting
-#' @param option options for creating the Knockoff copy
-#' option$copy true : create a knockoff copy
-#' option$eta the choice of eta for creating the knockoff copy
+#' @param option options for creating the Knockoff copy;
+#' option$copy true : create a knockoff copy;
+#' option$eta the choice of eta for creating the split knockoff copy
 #'
 #' @return A_beta: the design matrix for beta after variable splitting
 #' @return A_gamma: the design matrix for gamma after variable splitting
@@ -31,12 +28,11 @@
 #' option$q <- 0.2
 #' option$eta <- 0.1
 #' option$method <- 'knockoff'
-#' option$stage0 <- 'path'
 #' option$normalize <- 'true'
-#' option$cv_rule <- 'min'
 #' option$lambda <- 10.^seq(0, -6, by=-0.01)
 #' option$nu <- 10
 #' option$copy <- 'true'
+#' option$sign <- 'enabled'
 #' option <- option[-1]
 #' library(mvtnorm)
 #' sigma <-1
@@ -56,7 +52,7 @@
 #' beta_true <- matrix(0, p, 1)
 #' varepsilon <- rnorm(n) * sqrt(sigma)
 #' y <- X %*% beta_true + varepsilon
-#' creat.result  <- split_knockoffs.create(X, y, D, nu, option)
+#' creat.result  <- sk.create(X, y, D, nu, option)
 #' A_beta  <- creat.result$A_beta
 #' A_gamma <- creat.result$A_gamma
 #' tilde_y <- creat.result$tilde_y
@@ -67,7 +63,7 @@
 #' @export
 #'
 #'
-split_knockoffs.create <- function(X, y, D, nu, option)
+sk.create <- function(X, y, D, nu, option)
 # Input Argument:
 # X : the design matrix.
 # y : the response vector.
@@ -93,7 +89,6 @@ split_knockoffs.create <- function(X, y, D, nu, option)
   # calculate tifdr[is.na(fdr)] <- 0lde_y
   tilde_y <- rbind(y/sqrt(n),matrix(0,m,1))
 
-  if(option$copy == 'true'){
     s_size <- 2-option$eta
 
     # calculte inverse for Sigma_{beta, beta}
@@ -133,7 +128,7 @@ split_knockoffs.create <- function(X, y, D, nu, option)
 
     # calculate U=[U1;U_2] where U_2 = 0_m* m
     # U_1 is an orthogonal complement of X
-    decompose.result <- splitknockoff.decompose(X)
+    decompose.result <- sk.decompose(X)
     U_perp <- decompose.result$U_perp
     U_1 = U_perp[,1:m]
     U = rbind(U_1, matrix(0,m,m))
@@ -144,10 +139,6 @@ split_knockoffs.create <- function(X, y, D, nu, option)
 
     # calculate tilde_A_gamma
     tilde_A_gamma = A_gamma %*% (diag(m) - C_inv %*% diag_s) + A_beta %*%short%*%C_inv%*%diag_s+ U %*% K
-  }
-  else{
-    tilde_A_gamma = c()
-  }
   structure(list(call = match.call(),
                  A_beta = A_beta,
                  A_gamma = A_gamma,

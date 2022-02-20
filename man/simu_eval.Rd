@@ -2,14 +2,16 @@
 % Please edit documentation in R/simu.R
 \name{simu_eval}
 \alias{simu_eval}
-\title{simu_eval}
+\title{functions for evaluating simulations}
 \usage{
-simu_eval(gamma_true, result)
+simu_eval(gamma_true, result, r)
 }
 \arguments{
 \item{gamma_true}{true signal of gamma}
 
 \item{result}{the estimated support set of gamma}
+
+\item{r}{the estimated directional effect}
 }
 \value{
 fdr: false discovery rate of the estimated support set
@@ -17,5 +19,5 @@ fdr: false discovery rate of the estimated support set
 power: power of the estimated support set
 }
 \description{
-calculate the FDR and Power when gamma^* is available, i.e. in simulations.
+calculate the FDR and Power for simulations.
 }

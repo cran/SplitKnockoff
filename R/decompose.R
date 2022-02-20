@@ -5,26 +5,28 @@
 
 # KNOCKOFFS.PRIVATE.DECOMPOSE  Decompose design matrix X for knockoff creation
 
-#' splitknockoff.decompose
+#' make SVD as well as orthogonal complements
+#' 
+#' 
 #'
 #' @param X the input matrix
 #' @param randomize whether to randomize
 #'
 #' @return U
-#' @return S = S
-#' @return V = V
-#' @return U_perp =U_perp
+#' @return S
+#' @return V
+#' @return U_perp : orthogonal complement for U
 #' @examples
 #' library(mvtnorm)
 #' n = 350
 #' p = 100
 #' Sigma = matrix(0, p, p)
 #' X <- rmvnorm(n,matrix(0, p, 1), Sigma)
-#' decompose.result <- splitknockoff.decompose(X)
+#' decompose.result <- sk.decompose(X)
 #' U_perp <- decompose.result$U_perp
 #' @export
 #'
-splitknockoff.decompose <- function(X, randomize){
+sk.decompose <- function(X, randomize){
   # Check dimensions.
   n <- nrow(X)
   p <- ncol(X)

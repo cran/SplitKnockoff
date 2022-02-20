@@ -8,7 +8,7 @@
 
 
 
-#' private.hittingpoint
+#' hitting point calculator on a given path
 #'
 #' calculate the hitting time and the sign of
 #' respective variable in a path.
@@ -19,10 +19,10 @@
 #' @return Z: the hitting time
 #' @return r: the sign of respective variable at the hitting time
 #' @usage
-#' private.hittingpoint(coef, lambda_vec)
+#' hittingpoint(coef, lambda_vec)
 #' @export
 #'
-private.hittingpoint <-function(coef, lambda_vec)
+hittingpoint <-function(coef, lambda_vec)
 # input argument
 # coef: the path for one variable
 # lambdas: respective value of lambda in the path
@@ -52,10 +52,9 @@ private.hittingpoint <-function(coef, lambda_vec)
 }
 
 
-#' normc
+#' default normalization function for matrix
 #'
-#' Normalize columns of a matrix.
-#' A clone of NORMC from the Neural Network toolbox.
+#' normalize columns of a matrix.
 #'
 #' @param X the input martix
 #'

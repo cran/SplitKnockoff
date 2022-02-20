@@ -2,7 +2,7 @@
 % Please edit documentation in R/simu.R
 \name{simu_unit}
 \alias{simu_unit}
-\title{simu_unit}
+\title{default unit for simulations}
 \usage{
 simu_unit(n, p, D, A, c, k, option)
 }
@@ -27,10 +27,6 @@ simu_data: a structure contains the following elements
 simu_data$fdr_split: a vector recording fdr of split knockoffs w.r.t.nu
 
 simu_data$power_split: a vector recording power of split knockoffs w.r.t.nu
-
-simu_data$fdr_knock: fdr of knockoffs
-
-simu_data$power_knock: power of knockoffs
 }
 \description{
 the simulation unit for simulation experiments.

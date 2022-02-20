@@ -2,7 +2,7 @@
 % Please edit documentation in R/canonicalSVD.R
 \name{canonicalSVD}
 \alias{canonicalSVD}
-\title{canonicalSVD}
+\title{singular value decomposition}
 \usage{
 canonicalSVD(X)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/others.R
 \name{normc}
 \alias{normc}
-\title{normc}
+\title{default normalization function for matrix}
 \usage{
 normc(X)
 }
@@ -13,8 +13,7 @@ normc(X)
 Y the output matrix
 }
 \description{
-Normalize columns of a matrix.
-A clone of NORMC from the Neural Network toolbox.
+normalize columns of a matrix.
 }
 \examples{
 library(mvtnorm)

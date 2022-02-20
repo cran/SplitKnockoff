@@ -22,7 +22,6 @@ library(latex2exp)
 library(ggplot2)
 library(Matrix)
 library(glmnet)
-library(knockoff)
 library(MASS)
 library(SplitKnockoff)
 library(testthat)
@@ -47,6 +46,7 @@ option$cv_rule <- 'min'
 option$lambda <- 10.^seq(0, -6, by=-0.01)
 option$nu <- 10
 option$copy <- 'true'
+option$sign <- 'disabled'
 option <- option[-1]
 
 
@@ -89,7 +89,7 @@ y <- X %*% beta_true + varepsilon
 
 
   ## Split Knockoff
-filter_result <- splitknockoff.filter(X, D, y, option)
+filter_result <- sk.filter(X, D, y, option)
 Z_path <- filter_result$Z
 t_Z_path <- filter_result$t_Z
 
