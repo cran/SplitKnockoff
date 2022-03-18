@@ -3,7 +3,7 @@
 # revised 7 July, 2021
 # author：Haoxue Wang (haoxwang@student.ethz.ch)
 
-#' split knockoff selector given W statistics
+#' Split Knockoff selector given W statistics
 #'
 #' @param W statistics W_j for testing null hypothesis
 #' @param q target FDR

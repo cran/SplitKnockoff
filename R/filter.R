@@ -18,29 +18,32 @@
 #' @examples
 
 #' option <- list(data = NA, dim = length(data), dimnames = NULL)
-#' 
+#'
 #' # the target (directional) FDR control
-#' option$q <- 0.2    
-#' 
-#' # choice on threshold, the other choice is 'knockoff+'          
-#' option$method <- 'knockoff' 
-#' 
-#' # degree of separation between original design and its split knockoff copy 
+#' option$q <- 0.2
+#'
+#' # choice on threshold, the other choice is 'knockoff+'
+#' option$method <- 'knockoff'
+#'
+#' # degree of separation between original design and its split knockoff copy
 #' # in the range of [0, 2], the less the more separated
-#' option$eta <- 0.1          
-#'   
+#' option$eta <- 0.1
+#'
 #' # whether to normalize the dataset
 #' option$normalize <- 'true'
-#' 
+#'
+#' # whether to create a knockoff copy
+#' option$copy <- 'true'
+#'
 #' # choice on the set of regularization parameters for split LASSO path
 #' option$lambda <- 10.^seq(0, -6, by=-0.01)
-#' 
+#'
 #' # choice of nu for split knockoffs
 #' option$nu <- 10
-#' 
+#'
 #' # choice on whether to estimate the directional effect, 'disabled'/'enabled'
 #' option$sign <- 'enabled'
-#' 
+#'
 #' option <- option[-1]
 
 #'

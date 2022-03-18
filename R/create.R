@@ -14,8 +14,8 @@
 #' @param y the response vector
 #' @param D the linear transform
 #' @param nu the parameter for variable splitting
-#' @param option options for creating the Knockoff copy;
-#' option$copy true : create a knockoff copy;
+#' @param option options for creating the Knockoff copy; 
+#' option$copy true : create a knockoff copy; 
 #' option$eta the choice of eta for creating the split knockoff copy
 #'
 #' @return A_beta: the design matrix for beta after variable splitting
@@ -89,6 +89,7 @@ sk.create <- function(X, y, D, nu, option)
   # calculate tifdr[is.na(fdr)] <- 0lde_y
   tilde_y <- rbind(y/sqrt(n),matrix(0,m,1))
 
+  if(option$copy == 'true'){
     s_size <- 2-option$eta
 
     # calculte inverse for Sigma_{beta, beta}
@@ -128,7 +129,7 @@ sk.create <- function(X, y, D, nu, option)
 
     # calculate U=[U1;U_2] where U_2 = 0_m* m
     # U_1 is an orthogonal complement of X
-    decompose.result <- sk.decompose(X)
+    decompose.result <- sk.decompose(X, D)
     U_perp <- decompose.result$U_perp
     U_1 = U_perp[,1:m]
     U = rbind(U_1, matrix(0,m,m))
@@ -139,6 +140,10 @@ sk.create <- function(X, y, D, nu, option)
 
     # calculate tilde_A_gamma
     tilde_A_gamma = A_gamma %*% (diag(m) - C_inv %*% diag_s) + A_beta %*%short%*%C_inv%*%diag_s+ U %*% K
+  }
+  else{
+    tilde_A_gamma = c()
+  }
   structure(list(call = match.call(),
                  A_beta = A_beta,
                  A_gamma = A_gamma,

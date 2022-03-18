@@ -15,8 +15,8 @@ sk.create(X, y, D, nu, option)
 
 \item{nu}{the parameter for variable splitting}
 
-\item{option}{options for creating the Knockoff copy;
-option$copy true : create a knockoff copy;
+\item{option}{options for creating the Knockoff copy; 
+option$copy true : create a knockoff copy; 
 option$eta the choice of eta for creating the split knockoff copy}
 }
 \value{

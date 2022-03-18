@@ -4,12 +4,12 @@
 \alias{sk.decompose}
 \title{make SVD as well as orthogonal complements}
 \usage{
-sk.decompose(X, randomize)
+sk.decompose(X, D)
 }
 \arguments{
 \item{X}{the input matrix}
 
-\item{randomize}{whether to randomize}
+\item{D}{the linear transformer}
 }
 \value{
 U
@@ -27,8 +27,10 @@ make SVD as well as orthogonal complements
 library(mvtnorm)
 n = 350
 p = 100
+m = 200
 Sigma = matrix(0, p, p)
+D <- matrix(0,m,p)
 X <- rmvnorm(n,matrix(0, p, 1), Sigma)
-decompose.result <- sk.decompose(X)
+decompose.result <- sk.decompose(X,D)
 U_perp <- decompose.result$U_perp
 }

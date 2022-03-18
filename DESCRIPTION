@@ -1,7 +1,7 @@
 Package: SplitKnockoff
 Type: Package
 Title: Split Knockoffs for Structural Sparsity
-Version: 1.1
+Version: 1.2
 Date: 2022-02-20
 Author: Haoxue Wang [aut, cre] (Development of the whole packages),
   Yang Cao [aut] (Revison of this package),
@@ -38,6 +38,6 @@ VignetteBuilder: knitr
 NeedsCompilation: no
 RoxygenNote: 7.1.2
 License: MIT + file LICENSE
-Packaged: 2022-02-20 21:09:30 UTC; haoxue
+Packaged: 2022-03-17 13:55:19 UTC; haoxue
 Repository: CRAN
-Date/Publication: 2022-02-20 21:20:02 UTC
+Date/Publication: 2022-03-18 07:40:02 UTC

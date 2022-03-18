@@ -6,11 +6,11 @@
 # KNOCKOFFS.PRIVATE.DECOMPOSE  Decompose design matrix X for knockoff creation
 
 #' make SVD as well as orthogonal complements
-#' 
-#' 
+#'
+#'
 #'
 #' @param X the input matrix
-#' @param randomize whether to randomize
+#' @param D the linear transformer
 #'
 #' @return U
 #' @return S
@@ -20,14 +20,17 @@
 #' library(mvtnorm)
 #' n = 350
 #' p = 100
+#' m = 200
 #' Sigma = matrix(0, p, p)
+#' D <- matrix(0,m,p)
 #' X <- rmvnorm(n,matrix(0, p, 1), Sigma)
-#' decompose.result <- sk.decompose(X)
+#' decompose.result <- sk.decompose(X,D)
 #' U_perp <- decompose.result$U_perp
 #' @export
 #'
-sk.decompose <- function(X, randomize){
+sk.decompose <- function(X, D){
   # Check dimensions.
+  m <- nrow(D)
   n <- nrow(X)
   p <- ncol(X)
   if(n < 2*p){
@@ -39,10 +42,10 @@ sk.decompose <- function(X, randomize){
   S <- diag(S)
   V <- svd.result$V
   U <- svd.result$U
-  UU <- cbind(U,matrix(0,n,n-p))
+  UU <- cbind(U,matrix(0,n,m))
   qrresult <- qr(UU)
   Qreslt <- qr.Q(qrresult)
-  U_perp <- Qreslt[,(p+1):n]
+  U_perp <- Qreslt[,(p+1):(p+m)]
   structure(list(call = match.call(),
                  U = U,
                  S = S,

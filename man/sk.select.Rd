@@ -2,7 +2,7 @@
 % Please edit documentation in R/select.R
 \name{sk.select}
 \alias{sk.select}
-\title{split knockoff selector given W statistics}
+\title{Split Knockoff selector given W statistics}
 \usage{
 sk.select(W, q, option)
 }
@@ -17,5 +17,5 @@ sk.select(W, q, option)
 S array of selected variable indices
 }
 \description{
-split knockoff selector given W statistics
+Split Knockoff selector given W statistics
 }
