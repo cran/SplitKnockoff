@@ -17,7 +17,9 @@ U
 V
 }
 \description{
-Computes a reduced SVD without sign ambiguity
+Computes a reduced SVD without sign ambiguity. Our convention is that
+the sign of each vector in U is chosen such that the coefficient
+with largest absolute value is positive.
 }
 \examples{
 nu = 10
@@ -28,5 +30,4 @@ svd.result = canonicalSVD(A_gamma)
 S <- svd.result$S
 S <- diag(S)
 V <- svd.result$V
-
 }

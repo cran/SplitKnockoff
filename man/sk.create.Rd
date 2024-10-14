@@ -15,9 +15,8 @@ sk.create(X, y, D, nu, option)
 
 \item{nu}{the parameter for variable splitting}
 
-\item{option}{options for creating the Knockoff copy; 
-option$copy true : create a knockoff copy; 
-option$eta the choice of eta for creating the split knockoff copy}
+\item{option}{options for creating the Knockoff copy
+option$copy true : create a knockoff copy;}
 }
 \value{
 A_beta: the design matrix for beta after variable splitting
@@ -26,24 +25,21 @@ A_gamma: the design matrix for gamma after variable splitting
 
 tilde_y: the response vector after variable splitting.
 
-tilde_A_gamma: the knockoff copy of A_beta; will be [] if option$copy = false.
+tilde_A_gamma: the knockoff copy of A_beta; will be NULL if option$copy = false.
 }
 \description{
-Give the variable splitting design matrix
-and response vector. It will also create a split
-knockoff copy if required.
+Gives the variable splitting design matrix
+and response vector. It will also create a
+split knockoff copy if required.
 }
 \examples{
-option <- array(data = NA, dim = length(data), dimnames = NULL)
+option <- list()
 option$q <- 0.2
-option$eta <- 0.1
 option$method <- 'knockoff'
 option$normalize <- 'true'
 option$lambda <- 10.^seq(0, -6, by=-0.01)
 option$nu <- 10
 option$copy <- 'true'
-option$sign <- 'enabled'
-option <- option[-1]
 library(mvtnorm)
 sigma <-1
 p <- 100
@@ -67,7 +63,4 @@ A_beta  <- creat.result$A_beta
 A_gamma <- creat.result$A_gamma
 tilde_y <- creat.result$tilde_y
 tilde_A_gamma <- creat.result$tilde_A_gamma
-
-
-
 }

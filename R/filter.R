@@ -1,170 +1,307 @@
-# R function for filter of structural sparsity problem
-# 1 June, 2021
-# revised 7 July, 2021
-# author：Haoxue Wang (haoxwang@student.ethz.ch)
-
-#' Split Knockoff filter for structural sparsity
-#'
-#' the main function, Split Knockoff filter, for variable selection in structural sparsity problem.
+#' split Knockoff filter for structural sparsity problem
 #'
 #' @param X the design matrix
-#' @param D the linear transform
-#' @param y the response vector
-#' @param option various options for split knockoff filter, the details will be specified in the example
+#' @param D the response vector
+#' @param y the linear transformation
+#' @param option options for creating the Split Knockoff statistics.
+#' option$q: the desired FDR control target.
+#' option$beta: choices on beta(lambda), can be: 'path', beta(lambda)
+#'       is taken from a regularization path; 'cv_beta', beta(lambda) is taken
+#'       as the cross validation optimal estimator hat beta; or 'cv_all',
+#'       beta(lambda) as well as nu are taken from the cross validation
+#'       optimal estimators hat beta and hat nu.The default setting is
+#'       'cv_all'.
+#' option$lambda_cv: a set of lambda appointed for cross validation in
+#'       estimating hat beta, default 10.^seq(0, -8, by = -0.4).
+#' option$nu_cv: a set of nu appointed for cross validation in
+#'       estimating hat beta and hat nu, default 10.^seq(0, 2, by = 0.4).
+#' option$nu: a set of nu used in option.beta = 'path' or 'cv_beta' for
+#'       Split Knockoffs, default 10.^seq(0, 2, by = 0.2).
+#' option$lambda: a set of lambda appointed for Split LASSO path
+#'       calculation, default 10.^seq(0, -6, by = -0.01).
+#' option$normalize: whether to normalize the data, default true.
+#' option$W: the W statistics used for Split Knockoffs, can be 's', 'st',
+#' 'bc', 'bct', default 'st'.
 #'
-#' @return results: a cell with the selected variable set in each cell w.r.t. nu.
-#' @return Z: a cell with the feature significance Z in each cell w.r.t. nu.
-#' @return t_Z: a cell with the knockoff significance tilde_Z in each cell w.r.t. nu.
-#' @examples
-
-#' option <- list(data = NA, dim = length(data), dimnames = NULL)
-#'
-#' # the target (directional) FDR control
-#' option$q <- 0.2
-#'
-#' # choice on threshold, the other choice is 'knockoff+'
-#' option$method <- 'knockoff'
-#'
-#' # degree of separation between original design and its split knockoff copy
-#' # in the range of [0, 2], the less the more separated
-#' option$eta <- 0.1
-#'
-#' # whether to normalize the dataset
-#' option$normalize <- 'true'
-#'
-#' # whether to create a knockoff copy
-#' option$copy <- 'true'
-#'
-#' # choice on the set of regularization parameters for split LASSO path
-#' option$lambda <- 10.^seq(0, -6, by=-0.01)
-#'
-#' # choice of nu for split knockoffs
-#' option$nu <- 10
-#'
-#' # choice on whether to estimate the directional effect, 'disabled'/'enabled'
-#' option$sign <- 'enabled'
-#'
-#' option <- option[-1]
-
-#'
-#' # Settings on simulation parameters
-
-#' k <- 20   # sparsity level
-#' A <- 1    # magnitude
-#' n <- 350  # sample size
-#' p <- 100  # dimension of variables
-#' c <- 0.5  # feature correlation
-#' sigma <-1 # noise level
-
-#' # generate D
-#' D <- diag(p)
-#' m <- nrow(D)
-
-#' # generate X
-#' Sigma = matrix(0, p, p)
-#' for( i in 1: p){
-#'   for(j in 1: p){
-#'     Sigma[i, j] <- c^(abs(i - j))
-#'   }
-#' }
-
-#' library(mvtnorm)
-#' set.seed(100)
-#' X <- rmvnorm(n,matrix(0, p, 1), Sigma)
-
-#' # generate beta and gamma
-#' beta_true <- matrix(0, p, 1)
-#' for( i in 1: k){
-#'   beta_true[i, 1] = A
-#'   if ( i%%3 == 1){
-#'     beta_true[i, 1] = -A
-#'   }
-#' }
-#' gamma_true <- D %*% beta_true
-
-#' S0 <- which(gamma_true!=0)
-
-
-#' # generate varepsilon
-#' set.seed(1)
-
-#' # generate noise and y
-#' varepsilon <- rnorm(n) * sqrt(sigma)
-#' y <- X %*% beta_true + varepsilon
-#' filter_result <- sk.filter(X, D, y, option)
-#' Z_path <- filter_result$Z
-#' t_Z_path <- filter_result$t_Z
+#' @return various intermedia statistics
 #' @export
 #'
-sk.filter <- function(X, D, y, option)
-{
-  if(option$normalize == "true"){
-    X <- normc(X) # normalize(X)
-    y <- normc(y) # normalize(y)
-  }
-  nu_s = option$nu
-  n_nu <- length(nu_s)
-  Z <- list(data=NA,dim=c(1,n_nu))
-  t_Z <- list(data=NA,dim=c(1,n_nu))
-  r <- list(data=NA,dim=c(1,n_nu))
-
-  n<- nrow(X)
-  q = option$q
-  method = option$method
-
-
-  results <- list(data=NA,dim=c(1,n_nu))
-  # if(all.equal(option$stage0, 'fixed') && all.equal(option$beta, 'ridge'))
-  # {
-  #   split_knockoffs.statistics.pathorder.fixed_beta(X, y, D, option)
-  #   option$beta_choice <- beta_choice
+sk.filter <- function(X, D, y, option){
+  # Split Knockoff filter for structural sparsity problem.
   #
-  # }
-  for (i in 1: n_nu) {
-    nu = nu_s[i]
-    # filter.choose(option$stage0)
-    if (all.equal(option$sign, 'disabled') == TRUE){
-    path_result <- W_support(X, D, y, nu, option)
-    W <- path_result$W
-    Z[[i]] <- path_result$Z
-    t_Z[[i]] <- path_result$t_Z
-    select_results <- sk.select(W, q, option)
-    result <- select_results$S
-    results[[i]]<-result
-    }
-    else{
-      path_result <- W_sign(X, D, y, nu, option)
-      W <- path_result$W
-      r_temp <- path_result$r
-      Z[[i]] <- path_result$Z
-      t_Z[[i]] <- path_result$t_Z
-      select_results <- sk.select(W, q, option)
-      result <- select_results$S
-      results[[i]]<-result
-      r[[i]] <- r_temp[result]
-    }
-  }
-  if (all.equal(option$sign, 'disabled') == TRUE){
-  structure(list(call = match.call(),
-                 results = results,
-                 W = W,
-                 Z = Z,
-                 t_Z = t_Z),
-            class = 'filter_result')}
-  else {
-    structure(list(call = match.call(),
-                   results = results,
-                   W = W,
-                   r = r,
-                   Z = Z,
-                   t_Z = t_Z),
-              class = 'filter_result')}
+  # Input Arguments
+  # X : the design matrix.
+  # y : the response vector.
+  # D : the linear transformation.
+  # option: options for creating the Split Knockoff statistics.
+  #	option.q: the desired FDR control target.
+  #   option.beta: choices on \beta(\lambda), can be: 'path', \beta(\lambda)
+  #       is taken from a regularization path; 'cv_beta', \beta(\lambda) is taken
+  #       as the cross validation optimal estimator \hat\beta; or 'cv_all',
+  #       \beta(\lambda) as well as \nu are taken from the cross validation
+  #       optimal estimators \hat\beta and \hat\nu.The default setting is
+  #       'cv_all'.
+  #	option.lambda_cv: a set of lambda appointed for cross validation in
+  #       estimating \hat\beta, default 10.*[0:-0.4:-8].
+  #	option.nu_cv: a set of nu appointed for cross validation in
+  #       estimating \hat\beta and \hat\nu, default 10.*[0:0.4:2].
+  #   option.nu: a set of nu used in option.beta = 'path' or 'cv_beta' for
+  #       Split Knockoffs, default 10.*[0:0.2:2].
+  #	option.lambda: a set of lambda appointed for Split LASSO path
+  #       calculation, default 10.*[0:-0.01:-6].
+  #	option.normalize: whether to normalize the data, default true.
+  #   option.W: the W statistics used for Split Knockoffs, can be 's', 'st',
+  #       'bc', 'bct', default 'st'.
+
+  if (option$normalize == 'true' || is.null(option$normalize)){
+    X = normc(X)  # normalize(X)
+    y = normc(y)  # normalize(y)
+    y = y[ ,1]
   }
 
+  X = as.matrix(X)
 
+  q = option$q
+  n = nrow(X)
+  p = ncol(X)
+  m = nrow(D)
 
+  if (is.null(option$beta)){
+    option$beta = 'cv_all'
+  }
 
+  if (!is.null(option$frac)){
+    option$n_2 = n - floor(n * option$frac)
+  }
 
+  switch(option$beta,
+         'cv_all' = {
+           if (!is.null(option$seed)){
+             set.seed(option$seed)
+           }
+           rand_rank = sample(n)
 
+           # record random order for function W_path
+           option$rand_rank = rand_rank
+           ind1 = rand_rank[1: floor(n * option$frac)]
+           ind2 = rand_rank[floor(n*option$frac+1):length(rand_rank)]
+           X_1 = X[ind1, ]
+           y_1 = y[ind1]
+           X_2 = X[ind2, ]
+           y_2 = y[ind2]
+           n_1 = nrow(X_1)
 
+           if (n_1 < p || (n-n_1) < (p+m)){
+             # give support set estimation with dataset 1 in high
+             # dimensional cases
+             option$n_2 = n-n_1
+             result_cv = cv_screen(X_1, y_1, D, option)
+             beta_hat = result_cv$beta_hat
+             stat_cv = result_cv$stat_cv
+             X_new = X_2[, stat_cv$beta_supp]
+             D_new = D[stat_cv$gamma_supp, stat_cv$beta_supp]
+             option$gamma_supp = stat_cv$gamma_supp
+           }else{
+             result_cv = cv_all(X_1, y_1, D, option)
+             beta_hat = result_cv$beta_hat
+             stat_cv = result_cv$stat_cv
+             X_new = X_2
+             D_new = D
+           }
+           option$m = m
+           option$beta_hat = beta_hat
+           nu = stat_cv$nu
+           stats = sk.W_fixed(X_new, D_new, y_2, nu, option)
+           W = stats$W
+           results = list()
+           method = 'knockoff'
+           results$sk = select(W, q, method)
+           method = 'knockoff+'
+           results$sk_plus = select(W, q, method)
+           stats$nu = stat_cv$nu
+           if (n_1 < p || (n-n_1) < (p+m)){
+             stats$gamma_supp = stat_cv$gamma_supp
+           }
+         },
+         'path' = {
+           if (!is.null(option$seed)){
+             set.seed(option$seed)
+           }
+           rand_rank = sample(n)
 
+           # record random order for function W_path
+           option$rand_rank = rand_rank
+           ind1 = rand_rank[1: floor(n * option$frac)]
+           X_1 = X[ind1, ]
+           y_1 = y[ind1]
+           n_1 = nrow(X_1)
+           option$m = m
+           if (n_1 < p || (n-n_1) < (p+m)){
+             # give support set estimation with dataset 1 in high
+             # dimensional cases
+             option$n_2 = n-n_1
+             stat_cv = cv_screen(X_1, y_1, D, option)$stat_cv
+             X_new = X[, stat_cv$beta_supp]
+             D_new = D[stat_cv$gamma_supp, stat_cv$beta_supp]
+             option$gamma_supp = stat_cv$gamma_supp
+           }else{
+             X_new = X
+             D_new = D
+           }
+
+           if (!is.null(option$nu)){
+             nu_s = option$nu
+           }else{
+             nu_s = 10.^seq(0, 2, by = 0.2)
+           }
+           num_nu = length(nu_s)
+           results = list()
+           stats = list()
+
+           for (i in 1:num_nu){
+             nu = nu_s[i]
+             stats[[i]] = sk.W_path(X_new, D_new, y, nu, option)
+             W = stats[[i]]$W
+             results[[i]] = list()
+             method = 'knockoff'
+             results[[i]]$sk = select(W, q, method)
+             method = 'knockoff+'
+             results[[i]]$sk_plus = select(W, q, method)
+           }
+         },
+         'cv_beta' = {
+           if (!is.null(option$seed)){
+             set.seed(option$seed)
+           }
+           rand_rank = sample(n)
+
+           # record random order for function W_path
+           option$rand_rank = rand_rank
+           ind1 = rand_rank[1: floor(n * option$frac)]
+           ind2 = rand_rank[floor(n*option$frac+1):length(rand_rank)]
+           X_1 = X[ind1, ]
+           y_1 = y[ind1]
+           X_2 = X[ind2, ]
+           y_2 = y[ind2]
+           n_1 = nrow(X_1)
+           if (n_1 < p || (n-n_1) < (p+m)){
+             # give support set estimation with dataset 1 in high
+             # dimensional cases
+             option$n_2 = n-n_1
+             result_cv = cv_screen(X_1, y_1, D, option)
+             beta_hat = result_cv$beta_hat
+             stat_cv = result_cv$stat_cv
+             X_new = X_2[, stat_cv$beta_supp]
+             D_new = D[stat_cv$gamma_supp, stat_cv$beta_supp]
+             option$gamma_supp = stat_cv$gamma_supp
+           }else{
+             result_cv = cv_all(X_1, y_1, D, option)
+             beta_hat = result_cv$beta_hat
+             stat_cv = result_cv$stat_cv
+             X_new = X_2
+             D_new = D
+           }
+           option$m = m
+           option$beta_hat = beta_hat
+
+           if (!is.null(option$nu)){
+             nu_s = option$nu
+           }else{
+             nu_s = 10.^seq(0, 2, by = 0.2)
+           }
+           num_nu = length(nu_s)
+           results = list()
+           stats = list()
+
+           for (i in 1:num_nu){
+             nu = nu_s[i]
+             stats[[i]] = sk.W_fixed(X_new, D_new, y_2, nu, option)
+             W = stats[[i]]$W
+             results[[i]] = list()
+             method = 'knockoff'
+             results[[i]]$sk = select(W, q, method)
+             method = 'knockoff+'
+             results[[i]]$sk_plus = select(W, q, method)
+             stats[[i]]$nu = stat_cv$nu
+             if (n_1 < p || (n-n_1) < (p+m)){
+               stats[[i]]$gamma_supp = stat_cv$gamma_supp
+             }
+           }
+         },
+         'fill' = {
+           if (!is.null(option$seed)){
+             set.seed(option$seed)
+           }
+           rand_rank = sample(n)
+
+           # record random order for function W_path
+           option$rand_rank = rand_rank
+           ind1 = rand_rank[1: floor(n * option$frac)]
+           ind2 = rand_rank[floor(n*option$frac+1):length(rand_rank)]
+           X_1 = X[ind1, ]
+           y_1 = y[ind1]
+           X_2 = X[ind2, ]
+           y_2 = y[ind2]
+           n_2 = nrow(X_2)
+
+           if (p <= n_2 && n_2 < (p+m)){
+             beta_hat = solve(t(X) %*% X) %*% t(X) %*% y
+             sigma_hat = sqrt(sum((y - X %*% beta_hat)^2) / (n - p))
+             add_number = p+m-n_2
+             add_noise = stats::rnorm(add_number) * sigma_hat
+             y_2 = c(y_2, add_noise)
+             X_2 = rbind(X_2, matrix(0, add_number, p))
+           }
+           result_cv = cv_all(X_1, y_1, D, option)
+           beta_hat = result_cv$beta_hat
+           stat_cv = result_cv$stat_cv
+           X_new = X_2
+           D_new = D
+           option$beta_hat = beta_hat
+           option$m = m
+           if (!is.null(option$nu)){
+             nu_s = option$nu
+           }else{
+             nu_s = 10.^seq(0, 2, by = 0.2)
+           }
+           num_nu = length(nu_s)
+           results = list()
+           stats = list()
+           for (i in 1:num_nu){
+             nu = nu_s[i]
+             stats[[i]] = sk.W_fixed(X_new, D_new, y_2, nu, option)
+             W = stats[[i]]$W
+             results[[i]] = list()
+             method = 'knockoff'
+             results[[i]]$sk = select(W, q, method)
+             method = 'knockoff+'
+             results[[i]]$sk_plus = select(W, q, method)
+             stats[[i]]$nu = stat_cv$nu
+           }
+         },
+         'appoint' = {
+           option$beta_hat = option$beta_appointed
+           if (!is.null(option$nu)){
+             nu_s = option$nu
+           }else{
+             nu_s = 10.^seq(0, 2, by = 0.2)
+           }
+           num_nu = length(nu_s)
+           results = list()
+           stats = list()
+
+           for (i in 1:num_nu){
+             nu = nu_s[i]
+             stats[[i]] = sk.W_fixed(X, D, y, nu, option)
+             W = stats[[i]]$W
+             results[[i]] = list()
+             method = 'knockoff'
+             results[[i]]$sk = select(W, q, method)
+             method = 'knockoff+'
+             results[[i]]$sk_plus = select(W, q, method)
+           }
+         })
+
+  return(list(results = results, stats = stats))
+
+}

@@ -29,22 +29,23 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
@@ -62,55 +63,54 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -119,13 +119,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -336,7 +343,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SplitKnockoff)</span></code></pre></div>
 <div id="vignette-for-splitknockoff" class="section level1">
 <h1>Vignette for Splitknockoff</h1>
-<p><strong>Author : Haoxue Wang, Yang Cao, Xinwei Sun, Yuan
+<p><strong>Author : Yuxuan Chen, Haoxue Wang, Yang Cao, Xinwei Sun, Yuan
 Yao</strong></p>
 <div id="introduction" class="section level4">
 <h4>Introduction</h4>
@@ -347,22 +354,17 @@ parameters is of concern. This proposed scheme relaxes the linear
 subspace constraint to its neighborhood, often known as variable
 splitting in optimization, which leads to better incoherence and
 possible performance improvement in both power and FDR. <strong>This
-vignette illustrates the usage of Splitknockoff with simulation
-experiments and will help you apply the split knockoff method in a light
-way.</strong> On top of that, <strong>an application to Alzheimer’s
-Disease</strong> study with MRI data is given as an example to
-illustrate that the split knockoff method can disclose important lesion
-regions in brains associated with the disease and connections between
-neighboring regions of high contrast variations during disease
-progression.</p>
+vignette illustrates the usage of SplitKnockoff with simulation
+experiments in Cao et al. (2023) &lt;arXiv.2310.07605&gt; and will help
+you apply the split knockoff method in a light way.</strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;SplitKnockoff&quot;</span>)   <span class="co"># just one line code to install our package</span></span></code></pre></div>
 <p>This is a R implement on the Matlab version of Split Knockoffs. This
 R package is more convenient as <strong>glmnet</strong> can be used
 directly by</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;glmnet&#39;&quot;</span>)  <span class="co"># just one line code to install the glmnet tool</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;glmnet&quot;</span>)  <span class="co"># just one line code to install the glmnet tool</span></span></code></pre></div>
 <p><strong>Please update your glmnet package to the latest version for
 smooth usage of this package</strong>, the examples illustrated here are
-tested with <em>glmnet 4.2</em>.</p>
+tested with <em>glmnet 4.1-8</em>.</p>
 <p>For more information, please see the manual inside this package.</p>
 </div>
 <div id="key-function" class="section level4">
@@ -372,19 +374,23 @@ Split Knockoff filter, for variable selection in structural sparsity
 problem.</p>
 </div>
 <div id="function-involved-frequently" class="section level4">
-<h4>function involved frequently</h4>
+<h4>Function involved frequently</h4>
 <p><strong>sk.create(X, y, D, nu, option)</strong>: generate the split
 knockoff copy for structural sparsity problem.</p>
-<p><strong>W_sign(X, D, y, nu, option)</strong>: generate the W
-statistics for split knockoff on a split LASSO path.</p>
-<p><strong>sk.select(W, q)</strong>: this function is for variable
-selection based on W statistics.</p>
+<p><strong>sk.W_path(X, D, y, nu, option)</strong>: generate the <span class="math inline">\(W\)</span> statistics for split knockoff on a
+split LASSO path.</p>
+<p><strong>sk.W_fixed(X, D, y, nu, option)</strong>: generate the <span class="math inline">\(W\)</span> statistics for split knockoff based on
+a fixed <span class="math inline">\(\beta(\lambda) =
+\hat{\beta}\)</span>.</p>
+<p><strong>select(W, q, method)</strong>: this function is for variable
+selection based on <span class="math inline">\(W\)</span>
+statistics.</p>
 </div>
 <div id="for-reproduction-of-the-simulation-you-can-see-the-code-as-the-following." class="section level3">
 <h3><strong>For reproduction of the simulation, you can see the code as
 the following.</strong></h3>
 <div id="simulation-details" class="section level4">
-<h4>simulation details</h4>
+<h4>Simulation details</h4>
 <div id="install-all-the-packages-and-library-them." class="section level5">
 <h5>Install all the packages and library them.</h5>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;SplitKnockoff&quot;</span>)   <span class="co"># install our package</span></span>
@@ -394,458 +400,445 @@ the following.</strong></h3>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glmnet)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SplitKnockoff)</span></code></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SplitKnockoff)</span></code></pre></div>
 </div>
 <div id="set-the-parameter-for-the-simulation" class="section level5">
-<h5>set the parameter for the simulation</h5>
+<h5>Set the parameter for the simulation</h5>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">20</span>   <span class="co"># sparsity level</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">1</span>    <span class="co"># magnitude</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">350</span>  <span class="co"># sample size</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span>  <span class="co"># sample size</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">100</span>  <span class="co"># dimension of variables</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># feature correlation</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span><span class="dv">1</span> <span class="co"># noise level</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="at">data =</span> <span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">length</span>(data), <span class="at">dimnames =</span> <span class="cn">NULL</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the target (directional) FDR control</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>q <span class="ot">&lt;-</span> <span class="fl">0.2</span> </span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># choice on threshold, the other choice is &#39;knockoff+&#39;          </span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>method <span class="ot">&lt;-</span> <span class="st">&#39;knockoff&#39;</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># whether to normalize the dataset</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>normalize <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># degree of separation between original design and its split knockoff copy </span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># in the range of [0, 2], the less the more separated</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>eta <span class="ot">&lt;-</span> <span class="fl">0.1</span>           </span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># whether to normalize the dataset</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>normalize <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># fraction of data used to estimate \beta(\lambda)</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>frac <span class="ot">=</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">5</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># choice on the set of regularization parameters for split LASSO path</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>lambda <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="at">by=</span><span class="sc">-</span><span class="fl">0.01</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>lambda_cv <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="at">by=</span><span class="sc">-</span><span class="fl">0.01</span>)</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># choice on the set of regularization parameters for split LASSO path</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>lambda <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="at">by=</span><span class="sc">-</span><span class="fl">0.01</span>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># choice of nu for split knockoffs</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>nu <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># choice of nu for split knockoffs</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>expo <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="fl">0.2</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>nu <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span>expo</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>nu_cv <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span>expo</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>num_nu <span class="ot">&lt;-</span> <span class="fu">length</span>(option<span class="sc">$</span>nu)</span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># choice on whether to estimate the directional effect, &#39;disabled&#39;/&#39;enabled&#39;</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>sign <span class="ot">&lt;-</span> <span class="st">&#39;enabled&#39;</span></span></code></pre></div>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># set random seed</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>seed <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co"># the number of simulation instances</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>tests <span class="ot">=</span> <span class="dv">200</span> </span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>W <span class="ot">=</span> <span class="st">&#39;s&#39;</span></span></code></pre></div>
 </div>
-<div id="generate-d-and-x" class="section level5">
-<h5>generate D and X</h5>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">diag</span>(p)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">nrow</span>(D)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># generate X</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">0</span>, p, p)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> p){</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> p){</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    Sigma[i, j] <span class="ot">&lt;-</span> c<span class="sc">^</span>(<span class="fu">abs</span>(i <span class="sc">-</span> j))</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="generate-3-types-of-transformation" class="section level5">
+<h5>Generate 3 types of transformation</h5>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>D_G <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">0</span>, p<span class="dv">-1</span>, p)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(p<span class="dv">-1</span>)){</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  D_G[i, i] <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  D_G[i, i<span class="sc">+</span><span class="dv">1</span>] <span class="ot">=</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># generate D1, D2, and D3</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>D_1 <span class="ot">=</span> <span class="fu">diag</span>(p)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>D_2 <span class="ot">=</span> D_G</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>D_3 <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">diag</span>(p), D_G)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>D_s <span class="ot">=</span> <span class="fu">list</span>(<span class="at">D_1 =</span> D_1, <span class="at">D_2 =</span> D_2, <span class="at">D_3 =</span> D_3)</span></code></pre></div>
+</div>
+<div id="generate-x" class="section level5">
+<h5>Generate <span class="math inline">\(X\)</span></h5>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate Sigma</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">0</span>, p, p)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> p){</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> p){</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    Sigma[i, j] <span class="ot">&lt;-</span> c<span class="sc">^</span>(<span class="fu">abs</span>(i <span class="sc">-</span> j))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="package-mvtnorm-needed-for-this-generation-please-install-it-in-advance" class="section level5">
-<h5>package <strong>mvtnorm</strong> needed for this generation, please
+<h5>Package <strong>mvtnorm</strong> needed for this generation, please
 install it in advance</h5>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm) <span class="co"># package mvtnorm needed for this generation</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(n,<span class="fu">matrix</span>(<span class="dv">0</span>, p, <span class="dv">1</span>), Sigma) <span class="co"># generate X</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm) <span class="co"># package mvtnorm needed for this generation</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rmvnorm</span>(n,<span class="fu">matrix</span>(<span class="dv">0</span>, p, <span class="dv">1</span>), Sigma) <span class="co"># generate X</span></span></code></pre></div>
 </div>
-<div id="generate-beta-and-gamma" class="section level5">
-<h5>generate beta and gamma</h5>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>beta_true <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, p, <span class="dv">1</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> k){</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  beta_true[i, <span class="dv">1</span>] <span class="ot">=</span> A</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( i<span class="sc">%%</span><span class="dv">3</span> <span class="sc">==</span> <span class="dv">1</span>){</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  beta_true[i, <span class="dv">1</span>] <span class="ot">=</span> <span class="sc">-</span>A</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>gamma_true <span class="ot">&lt;-</span> D <span class="sc">%*%</span> beta_true</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>S0 <span class="ot">&lt;-</span> <span class="fu">which</span>(gamma_true<span class="sc">!=</span><span class="dv">0</span>)</span></code></pre></div>
-</div>
-<div id="generate-noise-and-y" class="section level5">
-<h5>generate noise and y</h5>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set random seed</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># generate noise and y</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>varepsilon <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n) <span class="sc">*</span> <span class="fu">sqrt</span>(sigma)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> X <span class="sc">%*%</span> beta_true <span class="sc">+</span> varepsilon</span></code></pre></div>
+<div id="generate-beta" class="section level5">
+<h5>Generate <span class="math inline">\(\beta\)</span></h5>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>beta_true <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, p, <span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> k){</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  beta_true[i, <span class="dv">1</span>] <span class="ot">=</span> A</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ( i<span class="sc">%%</span><span class="dv">3</span> <span class="sc">==</span> <span class="dv">1</span>){</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  beta_true[i, <span class="dv">1</span>] <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </div>
 <div id="key-step" class="section level4">
-<h4><strong>key step</strong></h4>
-<p><strong>use the key function filter to get the feature and knockoff
-significance</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Split Knockoff</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>filter_result <span class="ot">&lt;-</span> <span class="fu">sk.filter</span>(X, D, y, option)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Z_path <span class="ot">&lt;-</span> filter_result<span class="sc">$</span>Z</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>t_Z_path <span class="ot">&lt;-</span> filter_result<span class="sc">$</span>t_Z</span></code></pre></div>
-<p><strong>plot the figure 1</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sub</span>(<span class="st">&quot;TRUE&quot;</span>,<span class="st">&quot;0&quot;</span>,<span class="fu">is.element</span>(<span class="dv">1</span><span class="sc">:</span>m, S0))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">sub</span>(<span class="st">&quot;FALSE&quot;</span>,<span class="st">&quot;1&quot;</span>,a)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>Z_path[[<span class="dv">1</span>]],<span class="at">y=</span> t_Z_path[[<span class="dv">1</span>]], <span class="at">feature=</span>b)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="st">&quot;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/figure_1/result/figure_1.RData&quot;</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/figure_1/plot/figure_1b.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>feature))<span class="sc">+</span><span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Split Knockoff with Lasso Statistic&quot;</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;Value of $Z_i$&quot;</span>))</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;Value of $</span><span class="sc">\\</span><span class="st">tilde{Z_i}$&quot;</span>))</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="st">&quot;Null feature&quot;</span>,<span class="st">&quot;Non-null feature&quot;</span>))</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">geom_abline</span>(<span class="at">intercept=</span><span class="dv">0</span>,<span class="at">slope=</span><span class="dv">1</span> )</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_colour_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Null feature&quot;</span>, <span class="st">&quot;Non-null feature&quot;</span>))</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, Z_path[[<span class="dv">1</span>]]))</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
-</div>
-</div>
-<div id="for-figure-2a-2b-2d-2e-2g-and-2h-of-the-paper-simulation" class="section level3">
-<h3>for Figure 2a, 2b, 2d, 2e, 2g and 2h of the paper simulation</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 June, 2021</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># revised 7 July, 2021</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># author：Haoxue Wang (haoxwang@student.ethz.ch)</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This script reproduces the figures on FDR and power comparison between</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Split Knockoffs and Knockoffs.</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The intermediate result will be automatically saved to</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;../result/temp.RData’ with the proceeding of the calculation. The final</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># result will be saved to &#39;../result/examples.mat&#39;. The whole calculation</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># may takes hours to finish.</span></span>
+<h4><strong>Key step</strong></h4>
+<p><strong>Split knockoff for all <span class="math inline">\(\nu\)</span></strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># choice on the way generating the W statistics</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>beta <span class="ot">=</span> <span class="st">&#39;path&#39;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># save Z t_Z r t_Z for making plots</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>rawvalue <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># save y</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>tests <span class="ot">=</span> option<span class="sc">$</span>tests <span class="co"># the number of experiments</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># create matrices to store results</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">3</span>, tests, num_nu, <span class="dv">2</span>))</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">3</span>, tests, num_nu, <span class="dv">2</span>))</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (test <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>tests){</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># generate varepsilon</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(test)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># generate noise and y</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  varepsilon <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(n), <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(sigma)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">=</span> X <span class="sc">%*%</span> beta_true <span class="sc">+</span> varepsilon</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  Y[[test]] <span class="ot">=</span> y</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  raw <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># choose the respective D for each example</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    D <span class="ot">=</span> D_s[[j]]</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    gamma_true <span class="ot">&lt;-</span> D <span class="sc">%*%</span> beta_true</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    sk_results <span class="ot">=</span> <span class="fu">sk.filter</span>(X, D, y, option)</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    results <span class="ot">=</span> sk_results<span class="sc">$</span>results</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    raw[[j]] <span class="ot">=</span> sk_results<span class="sc">$</span>stats</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num_nu){</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>      r_sign <span class="ot">=</span> sk_results<span class="sc">$</span>stats[[i]]<span class="sc">$</span>r</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>      result <span class="ot">=</span> results[[i]]<span class="sc">$</span>sk</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>      fdr_split[j, test, i, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">!=</span> r_sign[result]) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>      power_split[j, test, i, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">==</span> r_sign[result]) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>      result <span class="ot">=</span> results[[i]]<span class="sc">$</span>sk_plus</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>      fdr_split[j, test, i, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">!=</span> r_sign[result]) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>      power_split[j, test, i, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">==</span> r_sign[result]) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>  rawvalue[[test]] <span class="ot">=</span> raw</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>Split knockoff for <span class="math inline">\(\nu\)</span>
+chosen by cross validation</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># choice on the way generating the W statistics</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>beta <span class="ot">=</span> <span class="st">&#39;cv_all&#39;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create matrices to store results</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fdr_cv <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">3</span>, tests, <span class="dv">2</span>))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>power_cv <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">3</span>, tests, <span class="dv">2</span>))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (test <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>tests){</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> Y[[test]]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># choose the respective D for each example</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    D <span class="ot">=</span> D_s[[j]]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    gamma_true <span class="ot">&lt;-</span> D <span class="sc">%*%</span> beta_true</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    sk_results <span class="ot">=</span> <span class="fu">sk.filter</span>(X, D, y, option)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    results <span class="ot">=</span> sk_results<span class="sc">$</span>results</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    r_sign <span class="ot">=</span> sk_results<span class="sc">$</span>stats<span class="sc">$</span>r</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">=</span> results<span class="sc">$</span>sk</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    fdr_cv[j, test, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">!=</span> r_sign[result]) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    power_cv[j, test, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">==</span> r_sign[result]) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    result <span class="ot">=</span> results<span class="sc">$</span>sk_plus</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    fdr_cv[j, test, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">!=</span> r_sign[result]) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    power_cv[j, test, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">sign</span>(gamma_true[result]) <span class="sc">==</span> r_sign[result]) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>mean_fdr_cv <span class="ot">&lt;-</span> <span class="fu">apply</span>(fdr_cv, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), mean)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>sd_fdr_cv <span class="ot">&lt;-</span> <span class="fu">apply</span>(fdr_cv, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), sd)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>mean_power_cv <span class="ot">&lt;-</span> <span class="fu">apply</span>(power_cv, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), mean)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>sd_power_cv <span class="ot">&lt;-</span> <span class="fu">apply</span>(power_cv, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), sd)</span></code></pre></div>
+<p><strong>Knockoff</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knockoff) <span class="co"># package knockoff needed</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create matrices to store results</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>fdr_knockoff <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>, tests, <span class="dv">2</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>power_knockoff <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>, tests, <span class="dv">2</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> D_s[[<span class="dv">2</span>]]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate X_bar, y_bar</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">t</span>(D) <span class="sc">%*%</span> <span class="fu">solve</span>(D <span class="sc">%*%</span> <span class="fu">t</span>(D))</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;SplitKnockoff&quot;</span>)   <span class="co"># install our package</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glmnet)</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SplitKnockoff)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>XF <span class="ot">&lt;-</span> X <span class="sc">%*%</span> <span class="fu">rep</span>(<span class="dv">1</span>, p)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>U_X <span class="ot">&lt;-</span> XF <span class="sc">/</span> <span class="fu">norm</span>(XF, <span class="st">&quot;F&quot;</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>UU_X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(U_X, <span class="fu">matrix</span>(<span class="dv">0</span>, n, n<span class="dv">-1</span>))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>qrresult <span class="ot">&lt;-</span> <span class="fu">qr</span>(UU_X)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>Qreslt <span class="ot">&lt;-</span> <span class="fu">qr.Q</span>(qrresult)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>UX_perp <span class="ot">&lt;-</span> Qreslt[,<span class="dv">2</span><span class="sc">:</span>n]</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>y_bar <span class="ot">&lt;-</span> <span class="fu">t</span>(UX_perp) <span class="sc">%*%</span> y</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>X_bar <span class="ot">&lt;-</span> <span class="fu">t</span>(UX_perp) <span class="sc">%*%</span> X <span class="sc">%*%</span> Z</span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">20</span>   <span class="co"># sparsity level</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">1</span>    <span class="co"># magnitude</span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">350</span>  <span class="co"># sample size</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">100</span>  <span class="co"># dimension of variables</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># feature correlation</span></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="at">data=</span><span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">length</span>(data), <span class="at">dimnames =</span> <span class="cn">NULL</span>)</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>q <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>eta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>normalize <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>lambda <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="at">by=</span><span class="sc">-</span><span class="fl">0.01</span>)</span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>copy <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>sign <span class="ot">&lt;-</span> <span class="st">&#39;enabled&#39;</span></span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> option[<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="co"># settings for nu</span></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>expo <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="at">by=</span><span class="fl">0.2</span>)</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>nu <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span>expo</span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>num_nu <span class="ot">&lt;-</span> <span class="fu">length</span>(option<span class="sc">$</span>nu)</span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="do">## calculation</span></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="co"># generate D1, D2, and D3</span></span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>D_G <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">0</span>,p<span class="dv">-1</span>, p)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (test <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>tests){</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> Y[[test]]</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># choose D_1 for each example</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  D <span class="ot">=</span> D_s[[<span class="dv">1</span>]]</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  gamma_true <span class="ot">&lt;-</span> D <span class="sc">%*%</span> beta_true</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>  k_results <span class="ot">=</span> <span class="fu">knockoff.filter</span>(X, y, <span class="at">knockoffs =</span> {<span class="cf">function</span>(x) <span class="fu">create.fixed</span>(x, <span class="at">y=</span>y, <span class="at">method=</span><span class="st">&#39;equi&#39;</span>)}, <span class="at">statistic =</span> stat.lasso_lambdasmax)</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>  W_k <span class="ot">=</span> k_results<span class="sc">$</span>statistic</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">=</span> <span class="fu">select</span>(W_k, option<span class="sc">$</span>q, <span class="st">&#39;knockoff&#39;</span>)</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  fdr_knockoff[<span class="dv">1</span>, test, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>  power_knockoff[<span class="dv">1</span>, test, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">=</span> <span class="fu">select</span>(W_k, option<span class="sc">$</span>q, <span class="st">&#39;knockoff+&#39;</span>)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>  fdr_knockoff[<span class="dv">1</span>, test, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>  power_knockoff[<span class="dv">1</span>, test, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># choose the D_2 for each example</span></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>  D <span class="ot">=</span> D_s[[<span class="dv">2</span>]]</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>  gamma_true <span class="ot">&lt;-</span> D <span class="sc">%*%</span> beta_true</span>
 <span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>p<span class="dv">-1</span>){</span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>D_G[i, i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>D_G[i, i<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>D_1 <span class="ot">&lt;-</span><span class="fu">diag</span>(p)</span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>D_2 <span class="ot">&lt;-</span> D_G</span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>D_3 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">diag</span>(p), D_G)</span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>D_s <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="at">data =</span> <span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">length</span>(data), <span class="at">dimnames =</span> <span class="cn">NULL</span>)</span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>D_s<span class="sc">$</span>D_1 <span class="ot">&lt;-</span> D_1</span>
-<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>D_s<span class="sc">$</span>D_2 <span class="ot">&lt;-</span> D_2</span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>D_s<span class="sc">$</span>D_3 <span class="ot">&lt;-</span> D_3</span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>D_s <span class="ot">&lt;-</span> D_s[<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">0</span>,<span class="fu">c</span>(<span class="dv">3</span>, num_nu, <span class="dv">2</span>))</span>
-<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">0</span>,<span class="fu">c</span>(<span class="dv">3</span>, num_nu,<span class="dv">2</span>))</span>
-<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="co"># fdr_knock &lt;- matrix(0, 2, 2)</span></span>
-<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="co"># power_knock &lt;- matrix(0, 2, 2)</span></span>
-<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>num_method <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>method_s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;knockoff&#39;</span>, <span class="st">&#39;knockoff+&#39;</span>)</span>
-<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="co"># attention! for quick speed, please set the meth manually 1 and 2</span></span>
-<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="co"># when meth =2, set the ratio calculation offset=1 in function select</span></span>
-<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>  meth <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span> <span class="dv">3</span>){</span>
-<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a><span class="co"># choose the respective D for each example</span></span>
-<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">&#39;Running example for D_%d&#39;</span>, i)</span>
-<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a>  D <span class="ot">&lt;-</span> D_s[[i]]</span>
-<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>  simu_data <span class="ot">&lt;-</span> <span class="fu">simu_unit</span>(n, p, D, A, c, k, option)</span>
-<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>  fdr_split[i, , meth ] <span class="ot">&lt;-</span> simu_data<span class="sc">$</span>fdr_split</span>
-<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>  power_split[i, , meth] <span class="ot">&lt;-</span> simu_data<span class="sc">$</span>power_split</span>
-<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if (i &lt; 3){</span></span>
-<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fdr_knock[meth, i] &lt;- simu_data$fdr_knock</span></span>
-<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>  <span class="co"># power_knock[meth, i] &lt;- simu_data$power_knock</span></span>
-<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   }</span></span>
-<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">&quot;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/result/temp.RData&quot;</span>)</span>
-<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="co"># save results</span></span>
-<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="st">&quot;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/result/examples.RData&quot;</span>)</span>
-<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>fdr_split_result <span class="ot">&lt;-</span> fdr_split</span>
-<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>power_split_result <span class="ot">&lt;-</span> power_split</span>
-<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a><span class="do">## for D_1</span></span>
-<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for FDR</span></span>
-<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> expo</span>
-<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">&lt;-</span> fdr_split_result[<span class="dv">1</span>, ,<span class="dv">1</span>]</span>
-<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">&lt;-</span> <span class="fu">array</span>(fdr_split, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>fdr_split_plus <span class="ot">&lt;-</span> fdr_split_result[<span class="dv">1</span>,,<span class="dv">2</span>]</span>
-<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a>fdr_split_plus <span class="ot">&lt;-</span> <span class="fu">array</span>(fdr_split_plus, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a>fdr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x,fdr_split,fdr_split_plus)</span>
-<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>fdr[<span class="fu">is.na</span>(fdr)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_11.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
-<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>fdr,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>fdr_split, <span class="at">color=</span><span class="st">&#39;fdr_split&#39;</span>))</span>
-<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>fdr,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>fdr_split_plus, <span class="at">color=</span><span class="st">&#39;fdr_split_plus&#39;</span>))</span>
-<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>))</span>
-<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;FDR&quot;</span>))</span>
-<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">geom_abline</span>(<span class="at">intercept=</span><span class="fl">0.2</span>,<span class="at">slope=</span><span class="dv">0</span>,<span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span> )</span>
-<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_colour_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
-<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
-<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for Power</span></span>
-<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> expo</span>
-<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">&lt;-</span> power_split_result[<span class="dv">1</span>,,<span class="dv">1</span>]</span>
-<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">&lt;-</span> <span class="fu">array</span>(power_split, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a>power_split_plus <span class="ot">&lt;-</span> power_split_result[<span class="dv">1</span>,,<span class="dv">2</span>]</span>
-<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a>power_split_plus <span class="ot">&lt;-</span> <span class="fu">array</span>(power_split_plus, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, power_split,power_split_plus)</span>
-<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_12.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
-<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>power,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>power_split, <span class="at">color=</span><span class="st">&#39;split Knockoff&#39;</span>))</span>
-<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> q <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">data=</span>power,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>power_split_plus, <span class="at">color=</span><span class="st">&#39;split Knockoff+&#39;</span>))</span>
-<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>))</span>
-<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;Power&quot;</span>))</span>
-<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">scale_colour_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q<span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(q)</span>
-<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
-<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a><span class="do">## for D_2</span></span>
-<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for FDR</span></span>
-<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> expo</span>
-<span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">&lt;-</span> fdr_split_result[<span class="dv">2</span>,,<span class="dv">1</span>]</span>
-<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">&lt;-</span> <span class="fu">array</span>(fdr_split, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a>fdr_split_plus <span class="ot">&lt;-</span> fdr_split_result[<span class="dv">2</span>, ,<span class="dv">2</span>]</span>
-<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a>fdr_split_plus <span class="ot">&lt;-</span> <span class="fu">array</span>(fdr_split_plus, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a>fdr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x,fdr_split,fdr_split_plus)</span>
-<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a>fdr[<span class="fu">is.na</span>(fdr)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a><span class="co"># save results</span></span>
-<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_21.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
-<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>fdr,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>fdr_split, <span class="at">color=</span><span class="st">&#39;fdr_split&#39;</span>))</span>
-<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>fdr,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>fdr_split_plus, <span class="at">color=</span><span class="st">&#39;fdr_split_plus&#39;</span>))</span>
-<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>))</span>
-<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;FDR&quot;</span>))</span>
-<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">geom_abline</span>(<span class="at">intercept=</span><span class="fl">0.2</span>,<span class="at">slope=</span><span class="dv">0</span>,<span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span> )</span>
-<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_colour_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
-<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
-<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for Power</span></span>
-<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> expo</span>
-<span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">&lt;-</span> power_split_result[<span class="dv">2</span>,,<span class="dv">1</span> ]</span>
-<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">&lt;-</span> <span class="fu">array</span>(power_split, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a>power_split_plus <span class="ot">&lt;-</span> power_split_result[<span class="dv">2</span>,,<span class="dv">2</span>]</span>
-<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a>power_split_plus <span class="ot">&lt;-</span> <span class="fu">array</span>(power_split_plus, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a><span class="co"># power_knock_ &lt;- power_knock[1]</span></span>
-<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a><span class="co"># power_knock_plus_ &lt;- power_knock[2]</span></span>
-<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="co"># power_knock_ &lt;- rep(power_knock_, num_nu)</span></span>
-<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a><span class="co"># power_knock_plus_ &lt;- rep(power_knock_plus_, num_nu)</span></span>
-<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x,power_split,power_split_plus)</span>
-<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_22.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
-<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>power,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>power_split, <span class="at">color=</span><span class="st">&#39;power_split&#39;</span>))</span>
-<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> q <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">data=</span>power,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>power_split_plus, <span class="at">color=</span><span class="st">&#39;power_split_plus&#39;</span>))</span>
-<span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>))</span>
-<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;Power&quot;</span>))</span>
-<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q<span class="sc">+</span> <span class="fu">scale_colour_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q<span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(q)</span>
-<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
-<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a><span class="do">## for D_3</span></span>
-<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for FDR</span></span>
-<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> expo</span>
-<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">&lt;-</span> fdr_split_result[<span class="dv">3</span>,,<span class="dv">1</span> ]</span>
-<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a>fdr_split <span class="ot">&lt;-</span> <span class="fu">array</span>(fdr_split, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a>fdr_split_plus <span class="ot">&lt;-</span> fdr_split_result[<span class="dv">3</span>,,<span class="dv">2</span>]</span>
-<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a>fdr_split_plus <span class="ot">&lt;-</span> <span class="fu">array</span>(fdr_split_plus, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a>fdr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x,fdr_split,fdr_split_plus)</span>
-<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a>fdr[<span class="fu">is.na</span>(fdr)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a><span class="co"># save results</span></span>
-<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_31.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
-<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>fdr,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>fdr_split, <span class="at">color=</span><span class="st">&#39;fdr_split&#39;</span>))</span>
-<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>fdr,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>fdr_split_plus, <span class="at">color=</span><span class="st">&#39;fdr_split_plus&#39;</span>))</span>
-<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>))</span>
-<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;FDR&quot;</span>))</span>
-<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">geom_abline</span>(<span class="at">intercept=</span><span class="fl">0.2</span>,<span class="at">slope=</span><span class="dv">0</span>,<span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span> )</span>
-<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_colour_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span>p <span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
-<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
-<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for Power</span></span>
-<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> expo</span>
-<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">&lt;-</span> power_split_result[<span class="dv">3</span>,,<span class="dv">1</span> ]</span>
-<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a>power_split <span class="ot">&lt;-</span> <span class="fu">array</span>(power_split, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a>power_split_plus <span class="ot">&lt;-</span> power_split_result[<span class="dv">3</span>,,<span class="dv">2</span>]</span>
-<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a>power_split_plus <span class="ot">&lt;-</span> <span class="fu">array</span>(power_split_plus, <span class="at">dim=</span><span class="fu">c</span>(num_nu, <span class="dv">1</span>))</span>
-<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x,power_split,power_split_plus)</span>
-<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/plot/figure_32.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
-<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()<span class="sc">+</span><span class="fu">geom_line</span>(<span class="at">data=</span>power,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>power_split, <span class="at">color=</span><span class="st">&#39;power_split&#39;</span>))</span>
-<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> q <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">data=</span>power,<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>power_split_plus, <span class="at">color=</span><span class="st">&#39;power_split_plus&#39;</span>))</span>
-<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>))</span>
-<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;Power&quot;</span>))</span>
-<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff&quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q<span class="sc">+</span> <span class="fu">scale_colour_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;split Knockoff &quot;</span>, <span class="st">&quot;split Knockoff+&quot;</span>))</span>
-<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span>q<span class="sc">+</span> <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(q)</span>
-<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
-<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">&quot;C:/Users/v-haoxuewang/Desktop/SplitKnockoff/simu_experiments/examples/result/final.RData&quot;</span>)</span></code></pre></div>
-</div>
-<div id="alzheimers-disease-application" class="section level3">
-<h3>Alzheimer’s Disease application</h3>
-<div id="disclose-important-lesion-regions-in-brains-associated-with-the-disease" class="section level4">
-<h4>Disclose important lesion regions in brains associated with the
-disease</h4>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glmnet)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SplitKnockoff)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="at">data=</span><span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">length</span>(data), <span class="at">dimnames =</span> <span class="cn">NULL</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>q <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>eta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>normalize <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>lambda <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="at">by=</span><span class="sc">-</span><span class="fl">0.01</span>)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>copy <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>sign <span class="ot">&lt;-</span> <span class="st">&#39;enabled&#39;</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> option[<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># settings for nu</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>expo <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by=</span><span class="fl">0.1</span>)</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>nu <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span>expo</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>num_nu <span class="ot">&lt;-</span> <span class="fu">length</span>(option<span class="sc">$</span>nu)</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>  k_results <span class="ot">=</span> <span class="fu">knockoff.filter</span>(X_bar, y_bar, <span class="at">knockoffs =</span> {<span class="cf">function</span>(x) <span class="fu">create.fixed</span>(x, <span class="at">y=</span>y_bar, <span class="at">method=</span><span class="st">&#39;equi&#39;</span>)}, <span class="at">statistic =</span> stat.lasso_lambdasmax)</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>  W_k <span class="ot">=</span> k_results<span class="sc">$</span>statistic</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">=</span> <span class="fu">select</span>(W_k, option<span class="sc">$</span>q, <span class="st">&#39;knockoff&#39;</span>)</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>  fdr_knockoff[<span class="dv">2</span>, test, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>  power_knockoff[<span class="dv">2</span>, test, <span class="dv">1</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">=</span> <span class="fu">select</span>(W_k, option<span class="sc">$</span>q, <span class="st">&#39;knockoff+&#39;</span>)</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>  fdr_knockoff[<span class="dv">2</span>, test, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">max</span>(<span class="fu">length</span>(result), <span class="dv">1</span>)</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>  power_knockoff[<span class="dv">2</span>, test, <span class="dv">2</span>] <span class="ot">=</span> <span class="fu">sum</span>(gamma_true[result] <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">/</span> <span class="fu">sum</span>(gamma_true <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>Plot figure 3</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> expo</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>t_value <span class="ot">=</span> <span class="fu">qt</span>(<span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.9</span>), tests <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>lower_bound <span class="ot">=</span> t_value[<span class="dv">1</span>]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>upper_bound <span class="ot">=</span> t_value[<span class="dv">2</span>]</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>fdr_knockoff_mean <span class="ot">&lt;-</span> <span class="fu">apply</span>(fdr_knockoff, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), mean)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>power_knockoff_mean <span class="ot">&lt;-</span> <span class="fu">apply</span>(power_knockoff, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), mean)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>fdr_knockoff_sd <span class="ot">&lt;-</span> <span class="fu">apply</span>(fdr_knockoff, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), sd)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>power_knockoff_sd <span class="ot">&lt;-</span> <span class="fu">apply</span>(power_knockoff, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), sd)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>fdr_split_mean <span class="ot">&lt;-</span> <span class="fu">apply</span>(fdr_split, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>), mean)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>fdr_split_sd <span class="ot">&lt;-</span> <span class="fu">apply</span>(fdr_split, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>), sd)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>power_split_mean <span class="ot">&lt;-</span> <span class="fu">apply</span>(power_split, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>), mean)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>power_split_sd <span class="ot">&lt;-</span> <span class="fu">apply</span>(power_split, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>), sd)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>fdr_split_top <span class="ot">&lt;-</span> fdr_split_mean <span class="sc">+</span> fdr_split_sd <span class="sc">*</span> upper_bound</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>fdr_split_bot <span class="ot">&lt;-</span> fdr_split_mean <span class="sc">+</span> fdr_split_sd <span class="sc">*</span> lower_bound</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>power_split_top <span class="ot">&lt;-</span> power_split_mean <span class="sc">+</span> power_split_sd <span class="sc">*</span> upper_bound</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>power_split_bot <span class="ot">&lt;-</span> power_split_mean <span class="sc">+</span> power_split_sd <span class="sc">*</span> lower_bound</span>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>root <span class="ot">=</span> <span class="fu">getwd</span>()</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="fu">sprintf</span>(<span class="st">&#39;%s/data/&#39;</span>, root))</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;X.csv&#39;</span>)</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span><span class="fu">as.matrix</span>(X)</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;y.csv&#39;</span>)</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">as.matrix</span>(y)</span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;D.csv&#39;</span>)</span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> <span class="fu">as.matrix</span>(D)</span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> <span class="fu">diag</span>(<span class="dv">90</span>)</span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>filter_result <span class="ot">&lt;-</span> <span class="fu">splitknockoff.filter</span>(X, D, y, option)</span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> filter_result<span class="sc">$</span>results</span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> filter_result<span class="sc">$</span>r</span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(results, <span class="at">file=</span><span class="st">&quot;results/region.RData&quot;</span>)</span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(r, <span class="at">file=</span><span class="st">&quot;results/sign.RData&quot;</span>)</span></code></pre></div>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="do">## for D_1</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for FDR</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;D:/SplitKnockoff_results/simu_experiments/Figure/figure_31_fdr.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>(x, <span class="dv">4</span>),</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(fdr_split_mean[<span class="dv">1</span>, , <span class="dv">1</span>], fdr_split_mean[<span class="dv">1</span>, , <span class="dv">2</span>], <span class="fu">rep</span>(fdr_knockoff_mean[<span class="dv">1</span>, <span class="dv">1</span>], num_nu), <span class="fu">rep</span>(fdr_knockoff_mean[<span class="dv">1</span>, <span class="dv">2</span>], num_nu)),</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span>, <span class="st">&quot;Knockoff&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span>), <span class="at">each =</span> num_nu)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> plot_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> fdr_split_bot[<span class="dv">1</span>, , <span class="dv">1</span>], <span class="at">ymax =</span> fdr_split_top[<span class="dv">1</span>, , <span class="dv">1</span>]), <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> fdr_split_bot[<span class="dv">1</span>, , <span class="dv">2</span>], <span class="at">ymax =</span> fdr_split_top[<span class="dv">1</span>, , <span class="dv">2</span>]), <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> option<span class="sc">$</span>q, <span class="at">slope=</span><span class="dv">0</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>), <span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;$FDR_{dir}$&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">expression</span>(<span class="st">&#39;D&#39;</span>[<span class="dv">1</span>])) <span class="sc">+</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;green&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;yellow&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fig)</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for Power</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;D:/SplitKnockoff_results/simu_experiments/Figure/figure_31_power.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>(x, <span class="dv">4</span>),</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(power_split_mean[<span class="dv">1</span>, , <span class="dv">1</span>], power_split_mean[<span class="dv">1</span>, , <span class="dv">2</span>], <span class="fu">rep</span>(power_knockoff_mean[<span class="dv">1</span>, <span class="dv">1</span>], num_nu), <span class="fu">rep</span>(power_knockoff_mean[<span class="dv">1</span>, <span class="dv">2</span>], num_nu)),</span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span>, <span class="st">&quot;Knockoff&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span>), <span class="at">each =</span> num_nu)</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> plot_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> power_split_bot[<span class="dv">1</span>, , <span class="dv">1</span>], <span class="at">ymax =</span> power_split_top[<span class="dv">1</span>, , <span class="dv">1</span>]), <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> power_split_bot[<span class="dv">1</span>, , <span class="dv">2</span>], <span class="at">ymax =</span> power_split_top[<span class="dv">1</span>, , <span class="dv">2</span>]), <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>), <span class="at">y =</span> <span class="st">&quot;Power&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">expression</span>(<span class="st">&#39;D&#39;</span>[<span class="dv">1</span>])) <span class="sc">+</span></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;green&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;yellow&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fig)</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a><span class="do">## for D_2</span></span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for FDR</span></span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;D:/SplitKnockoff_results/simu_experiments/Figure/figure_32_fdr.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>(x, <span class="dv">4</span>),</span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(fdr_split_mean[<span class="dv">2</span>, , <span class="dv">1</span>], fdr_split_mean[<span class="dv">2</span>, , <span class="dv">2</span>], <span class="fu">rep</span>(fdr_knockoff_mean[<span class="dv">2</span>, <span class="dv">1</span>], num_nu), <span class="fu">rep</span>(fdr_knockoff_mean[<span class="dv">2</span>, <span class="dv">2</span>], num_nu)),</span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span>, <span class="st">&quot;Knockoff&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span>), <span class="at">each =</span> num_nu)</span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> plot_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> fdr_split_bot[<span class="dv">2</span>, , <span class="dv">1</span>], <span class="at">ymax =</span> fdr_split_top[<span class="dv">2</span>, , <span class="dv">1</span>]), <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> fdr_split_bot[<span class="dv">2</span>, , <span class="dv">2</span>], <span class="at">ymax =</span> fdr_split_top[<span class="dv">2</span>, , <span class="dv">2</span>]), <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> option<span class="sc">$</span>q, <span class="at">slope=</span><span class="dv">0</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>), <span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;$FDR_{dir}$&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">expression</span>(<span class="st">&#39;D&#39;</span>[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;green&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;yellow&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fig)</span>
+<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for Power</span></span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;D:/SplitKnockoff_results/simu_experiments/Figure/figure_32_power.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>(x, <span class="dv">4</span>),</span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(power_split_mean[<span class="dv">2</span>, , <span class="dv">1</span>], power_split_mean[<span class="dv">2</span>, , <span class="dv">2</span>], <span class="fu">rep</span>(power_knockoff_mean[<span class="dv">2</span>, <span class="dv">1</span>], num_nu), <span class="fu">rep</span>(power_knockoff_mean[<span class="dv">2</span>, <span class="dv">2</span>], num_nu)),</span>
+<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span>, <span class="st">&quot;Knockoff&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span>), <span class="at">each =</span> num_nu)</span>
+<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> plot_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> power_split_bot[<span class="dv">2</span>, , <span class="dv">1</span>], <span class="at">ymax =</span> power_split_top[<span class="dv">2</span>, , <span class="dv">1</span>]), <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> power_split_bot[<span class="dv">2</span>, , <span class="dv">2</span>], <span class="at">ymax =</span> power_split_top[<span class="dv">2</span>, , <span class="dv">2</span>]), <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>), <span class="at">y =</span> <span class="st">&quot;Power&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">expression</span>(<span class="st">&#39;D&#39;</span>[<span class="dv">2</span>])) <span class="sc">+</span></span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;green&quot;</span>, <span class="st">&quot;Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;yellow&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fig)</span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a><span class="do">## for D_3</span></span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for FDR</span></span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;D:/SplitKnockoff_results/simu_experiments/Figure/figure_33_fdr.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>(x, <span class="dv">2</span>),</span>
+<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(fdr_split_mean[<span class="dv">3</span>, , <span class="dv">1</span>], fdr_split_mean[<span class="dv">3</span>, , <span class="dv">2</span>]),</span>
+<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span>), <span class="at">each =</span> num_nu)</span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> plot_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> fdr_split_bot[<span class="dv">3</span>, , <span class="dv">1</span>], <span class="at">ymax =</span> fdr_split_top[<span class="dv">3</span>, , <span class="dv">1</span>]), <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> fdr_split_bot[<span class="dv">3</span>, , <span class="dv">2</span>], <span class="at">ymax =</span> fdr_split_top[<span class="dv">3</span>, , <span class="dv">2</span>]), <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> option<span class="sc">$</span>q, <span class="at">slope=</span><span class="dv">0</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>), <span class="at">y =</span> <span class="fu">TeX</span>(<span class="st">&quot;$FDR_{dir}$&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">expression</span>(<span class="st">&#39;D&#39;</span>[<span class="dv">3</span>])) <span class="sc">+</span></span>
+<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fig)</span>
+<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a><span class="do">## plot for Power</span></span>
+<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;D:/SplitKnockoff_results/simu_experiments/Figure/figure_33_power.png&#39;</span>, <span class="at">height=</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">1000</span>)</span>
+<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>(x, <span class="dv">2</span>),</span>
+<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(power_split_mean[<span class="dv">3</span>, , <span class="dv">1</span>], power_split_mean[<span class="dv">3</span>, , <span class="dv">2</span>]),</span>
+<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span>), <span class="at">each =</span> num_nu)</span>
+<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> plot_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> power_split_bot[<span class="dv">3</span>, , <span class="dv">1</span>], <span class="at">ymax =</span> power_split_top[<span class="dv">3</span>, , <span class="dv">1</span>]), <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">x =</span> expo, <span class="at">ymin =</span> power_split_bot[<span class="dv">3</span>, , <span class="dv">2</span>], <span class="at">ymax =</span> power_split_top[<span class="dv">3</span>, , <span class="dv">2</span>]), <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">TeX</span>(<span class="st">&quot;$</span><span class="sc">\\</span><span class="st">log_{10} (</span><span class="sc">\\</span><span class="st">nu)$&quot;</span>), <span class="at">y =</span> <span class="st">&quot;Power&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">expression</span>(<span class="st">&#39;D&#39;</span>[<span class="dv">3</span>])) <span class="sc">+</span></span>
+<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Split Knockoff&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Split Knockoff+&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fig)</span>
+<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 </div>
-<div id="connections-between-neighboring-regions-of-high-contrast-variations-during-disease-progression." class="section level4">
-<h4>Connections between neighboring regions of high contrast variations
-during disease progression.</h4>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(latex2exp)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glmnet)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SplitKnockoff)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="at">data=</span><span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">length</span>(data), <span class="at">dimnames =</span> <span class="cn">NULL</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>q <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>eta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>normalize <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>lambda <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span><span class="fu">seq</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="at">by=</span><span class="sc">-</span><span class="fl">0.01</span>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>copy <span class="ot">&lt;-</span> <span class="st">&#39;true&#39;</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>sign <span class="ot">&lt;-</span> <span class="st">&#39;enabled&#39;</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>option <span class="ot">&lt;-</span> option[<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co"># settings for nu</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>expo <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">by=</span><span class="fl">0.1</span>)</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>option<span class="sc">$</span>nu <span class="ot">&lt;-</span> <span class="fl">10.</span><span class="sc">^</span>expo</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>num_nu <span class="ot">&lt;-</span> <span class="fu">length</span>(option<span class="sc">$</span>nu)</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># original .mat data </span></span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>root <span class="ot">=</span> <span class="fu">getwd</span>()</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="fu">sprintf</span>(<span class="st">&#39;%s/data/&#39;</span>, root))</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">readMat</span>(<span class="st">&#39;X.mat&#39;</span>)</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> X<span class="sc">$</span>X</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">readMat</span>(<span class="st">&#39;y.mat&#39;</span>)</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> y<span class="sc">$</span>y</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> <span class="fu">readMat</span>(<span class="st">&#39;D.mat&#39;</span>)</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> D<span class="sc">$</span>D</span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># root = getwd()</span></span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd(sprintf(&#39;%s/data/&#39;, root))</span></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="co"># X = read.csv(&#39;X.csv&#39;)</span></span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="co"># X =as.matrix(X)</span></span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="co"># y = read.csv(&#39;y.csv&#39;)</span></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="co"># y = as.matrix(y)</span></span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="co"># D = read.csv(&#39;D.csv&#39;)</span></span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="co"># D = as.matrix(D)</span></span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>filter_result <span class="ot">&lt;-</span> <span class="fu">splitknockoff.filter</span>(X, D, y, option)</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> filter_result<span class="sc">$</span>results</span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> filter_result<span class="sc">$</span>r</span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(results, <span class="at">file=</span><span class="st">&quot;results/connection.RData&quot;</span>)</span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(r, <span class="at">file=</span><span class="st">&quot;results/sign.RData&quot;</span>)</span></code></pre></div>
 </div>
-</div>
-<div id="for-your-consideration" class="section level3">
-<h3>For your consideration</h3>
-<p>It usually takes 50min-80min to simulate each experiment. If you want
-to see the result of the experiment directly, you can reload our
-generated result by</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;...../SplitKnockoff/simu_experiments/figure_1/result/figure_1.RData&quot;</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;...../SplitKnockoff/simu_experiments/examples/result/final.RData&quot;</span>)</span></code></pre></div>
-<p>If you have any question or idea, please contact the author of this R
-package <strong>Haoxue Wang (<a href="mailto:haoxwang@student.ethz.ch" class="email">haoxwang@student.ethz.ch</a>)</strong>.</p>
+<div id="save-results-for-table-1" class="section level3">
+<h3>Save results for table 1</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(<span class="fu">list</span>(<span class="at">mean_fdr_D1_knockoff =</span> fdr_knockoff_mean[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D1_knockoff =</span> fdr_knockoff_sd[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D1_knockoff =</span> power_knockoff_mean[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D1_knockoff =</span> power_knockoff_sd[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D2_knockoff =</span> fdr_knockoff_mean[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D2_knockoff =</span> fdr_knockoff_sd[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D2_knockoff =</span> power_knockoff_mean[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D2_knockoff =</span> power_knockoff_sd[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D1_sk =</span> mean_fdr_cv[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D1_sk =</span> sd_fdr_cv[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D1_sk =</span> mean_power_cv[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D1_sk =</span> sd_power_cv[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D2_sk =</span> mean_fdr_cv[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D2_sk =</span> sd_fdr_cv[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D2_sk =</span> mean_power_cv[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D2_sk =</span> sd_power_cv[<span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D3_sk =</span> mean_fdr_cv[<span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D3_sk =</span> sd_fdr_cv[<span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D3_sk =</span> mean_power_cv[<span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D3_sk =</span> sd_power_cv[<span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D1_knockoff_pl =</span> fdr_knockoff_mean[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D1_knockoff_pl =</span> fdr_knockoff_sd[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D1_knockoff_pl =</span> power_knockoff_mean[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D1_knockoff_pl =</span> power_knockoff_sd[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D2_knockoff_pl =</span> fdr_knockoff_mean[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D2_knockoff_pl =</span> fdr_knockoff_sd[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D2_knockoff_pl =</span> power_knockoff_mean[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D2_knockoff_pl =</span> power_knockoff_sd[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D1_sk_pl =</span> mean_fdr_cv[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D1_sk_pl =</span> sd_fdr_cv[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D1_sk_pl =</span> mean_power_cv[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D1_sk_pl =</span> sd_power_cv[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D2_sk_pl =</span> mean_fdr_cv[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D2_sk_pl =</span> sd_fdr_cv[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D2_sk_pl =</span> mean_power_cv[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D2_sk_pl =</span> sd_power_cv[<span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_fdr_D3_sk_pl =</span> mean_fdr_cv[<span class="dv">3</span>, <span class="dv">2</span>],</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_fdr_D3_sk_pl =</span> sd_fdr_cv[<span class="dv">3</span>, <span class="dv">2</span>],</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>             <span class="at">mean_power_D3_sk_pl =</span> mean_power_cv[<span class="dv">3</span>, <span class="dv">2</span>],</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>             <span class="at">sd_power_D3_sk_pl =</span> sd_power_cv[<span class="dv">3</span>, <span class="dv">2</span>]), </span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>        <span class="at">file =</span> <span class="st">&#39;D:/SplitKnockoff_results/simu_experiments/Table/table1.rds&#39;</span>)</span></code></pre></div>
 </div>
 </div>
 

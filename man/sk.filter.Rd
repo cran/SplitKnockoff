@@ -2,95 +2,40 @@
 % Please edit documentation in R/filter.R
 \name{sk.filter}
 \alias{sk.filter}
-\title{Split Knockoff filter for structural sparsity}
+\title{split Knockoff filter for structural sparsity problem}
 \usage{
 sk.filter(X, D, y, option)
 }
 \arguments{
 \item{X}{the design matrix}
 
-\item{D}{the linear transform}
+\item{D}{the response vector}
 
-\item{y}{the response vector}
+\item{y}{the linear transformation}
 
-\item{option}{various options for split knockoff filter, the details will be specified in the example}
+\item{option}{options for creating the Split Knockoff statistics.
+option$q: the desired FDR control target.
+option$beta: choices on beta(lambda), can be: 'path', beta(lambda)
+is taken from a regularization path; 'cv_beta', beta(lambda) is taken
+as the cross validation optimal estimator hat beta; or 'cv_all',
+beta(lambda) as well as nu are taken from the cross validation
+optimal estimators hat beta and hat nu.The default setting is
+'cv_all'.
+option$lambda_cv: a set of lambda appointed for cross validation in
+estimating hat beta, default 10.^seq(0, -8, by = -0.4).
+option$nu_cv: a set of nu appointed for cross validation in
+estimating hat beta and hat nu, default 10.^seq(0, 2, by = 0.4).
+option$nu: a set of nu used in option.beta = 'path' or 'cv_beta' for
+Split Knockoffs, default 10.^seq(0, 2, by = 0.2).
+option$lambda: a set of lambda appointed for Split LASSO path
+calculation, default 10.^seq(0, -6, by = -0.01).
+option$normalize: whether to normalize the data, default true.
+option$W: the W statistics used for Split Knockoffs, can be 's', 'st',
+'bc', 'bct', default 'st'.}
 }
 \value{
-results: a cell with the selected variable set in each cell w.r.t. nu.
-
-Z: a cell with the feature significance Z in each cell w.r.t. nu.
-
-t_Z: a cell with the knockoff significance tilde_Z in each cell w.r.t. nu.
+various intermedia statistics
 }
 \description{
-the main function, Split Knockoff filter, for variable selection in structural sparsity problem.
-}
-\examples{
-option <- list(data = NA, dim = length(data), dimnames = NULL)
-
-# the target (directional) FDR control
-option$q <- 0.2
-
-# choice on threshold, the other choice is 'knockoff+'
-option$method <- 'knockoff'
-
-# degree of separation between original design and its split knockoff copy
-# in the range of [0, 2], the less the more separated
-option$eta <- 0.1
-
-# whether to normalize the dataset
-option$normalize <- 'true'
-
-# whether to create a knockoff copy
-option$copy <- 'true'
-
-# choice on the set of regularization parameters for split LASSO path
-option$lambda <- 10.^seq(0, -6, by=-0.01)
-
-# choice of nu for split knockoffs
-option$nu <- 10
-
-# choice on whether to estimate the directional effect, 'disabled'/'enabled'
-option$sign <- 'enabled'
-
-option <- option[-1]
-
-# Settings on simulation parameters
-k <- 20   # sparsity level
-A <- 1    # magnitude
-n <- 350  # sample size
-p <- 100  # dimension of variables
-c <- 0.5  # feature correlation
-sigma <-1 # noise level
-# generate D
-D <- diag(p)
-m <- nrow(D)
-# generate X
-Sigma = matrix(0, p, p)
-for( i in 1: p){
-  for(j in 1: p){
-    Sigma[i, j] <- c^(abs(i - j))
-  }
-}
-library(mvtnorm)
-set.seed(100)
-X <- rmvnorm(n,matrix(0, p, 1), Sigma)
-# generate beta and gamma
-beta_true <- matrix(0, p, 1)
-for( i in 1: k){
-  beta_true[i, 1] = A
-  if ( i\%\%3 == 1){
-    beta_true[i, 1] = -A
-  }
-}
-gamma_true <- D \%*\% beta_true
-S0 <- which(gamma_true!=0)
-# generate varepsilon
-set.seed(1)
-# generate noise and y
-varepsilon <- rnorm(n) * sqrt(sigma)
-y <- X \%*\% beta_true + varepsilon
-filter_result <- sk.filter(X, D, y, option)
-Z_path <- filter_result$Z
-t_Z_path <- filter_result$t_Z
+split Knockoff filter for structural sparsity problem
 }
